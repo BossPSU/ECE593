@@ -1,0 +1,379 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/dboss/common/Documents/ECE593
+vece593w26_acc
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 DXx4 work 11 MUL_package 0 22 liR>;0Zkkzi;b4Qg`lI:F3
+DXx4 work 21 ece593w26_acc_sv_unit 0 22 NPQID982a`W?_DbHS1D]z2
+Z4 !s110 1768631505
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 QklVCedEU@2aFdh5<lcFL3
+IZnGBN5`j]Z7A`NR6BmlkB1
+!s105 ece593w26_acc_sv_unit
+S1
+R1
+Z6 w1768595786
+Z7 8ece593w26_acc.sv
+Z8 Fece593w26_acc.sv
+!i122 30
+L0 2 5
+Z9 OL;L;2021.3_1;73
+31
+Z10 !s108 1768631505.000000
+Z11 !s107 mac_tb.sv|ece593w26_mac.sv|ece593w26_acc.sv|ece593w26_mul.sv|RCA.sv|HA.sv|FA.sv|MUL_package.sv|
+Z12 !s90 -reportprogress|300|MUL_package.sv|FA.sv|HA.sv|RCA.sv|ece593w26_mul.sv|ece593w26_acc.sv|ece593w26_mac.sv|mac_tb.sv|
+!i113 0
+Z13 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z14 tCvgOpt 0
+Xece593w26_acc_sv_unit
+R2
+R3
+R4
+VNPQID982a`W?_DbHS1D]z2
+r1
+!s85 0
+!i10b 1
+!s100 2:^5kFef02IPO<YKeSJN63
+INPQID982a`W?_DbHS1D]z2
+!i103 1
+S1
+R1
+R6
+R7
+R8
+!i122 30
+Z15 L0 1 0
+R9
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+vece593w26_mac
+R2
+R3
+DXx4 work 21 ece593w26_mac_sv_unit 0 22 zSz>fT5nlbLhbUznMfWUA3
+R4
+R5
+r1
+!s85 0
+!i10b 1
+!s100 YUG[VPz2gGnm7IJB`?VhH3
+IN`K?RZNYBam1ZVHA4@4ch3
+!s105 ece593w26_mac_sv_unit
+S1
+R1
+Z16 w1768626253
+Z17 8ece593w26_mac.sv
+Z18 Fece593w26_mac.sv
+!i122 30
+L0 2 30
+R9
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Xece593w26_mac_sv_unit
+R2
+R3
+R4
+VzSz>fT5nlbLhbUznMfWUA3
+r1
+!s85 0
+!i10b 1
+!s100 2>_A1J_g^1MY45odc;CTJ1
+IzSz>fT5nlbLhbUznMfWUA3
+!i103 1
+S1
+R1
+R16
+R17
+R18
+!i122 30
+R15
+R9
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+vece593w26_mul
+R2
+R3
+DXx4 work 21 ece593w26_mul_sv_unit 0 22 ^ROgEY17h4eM8FV=g9=360
+R4
+R5
+r1
+!s85 0
+!i10b 1
+!s100 EW[cL85o7=JdUO<ck3SI71
+IFji=EKneIVi_^OG?DWa1i2
+!s105 ece593w26_mul_sv_unit
+S1
+R1
+Z19 w1768627696
+Z20 8ece593w26_mul.sv
+Z21 Fece593w26_mul.sv
+!i122 30
+L0 2 99
+R9
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Xece593w26_mul_sv_unit
+R2
+R3
+R4
+V^ROgEY17h4eM8FV=g9=360
+r1
+!s85 0
+!i10b 1
+!s100 iT58nnANbY:jo7RaH6Bbk1
+I^ROgEY17h4eM8FV=g9=360
+!i103 1
+S1
+R1
+R19
+R20
+R21
+!i122 30
+R15
+R9
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+vFA
+R2
+R4
+!i10b 1
+!s100 nd3dPog3^m:IASJazNIUU0
+I^U36<fNSEDh0IQ8c[?z0h2
+S1
+R1
+w1768585204
+8FA.sv
+FFA.sv
+!i122 30
+L0 1 14
+R5
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+n@f@a
+vHA
+R2
+R4
+!i10b 1
+!s100 A883]Q=fb]YnkJzXcMHP03
+IUMZQ9I4]UK2fY529dRlUo2
+S1
+R1
+w1768586563
+8HA.sv
+FHA.sv
+!i122 30
+L0 1 6
+R5
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+n@h@a
+vmac_tb
+R2
+R3
+DXx4 work 14 mac_tb_sv_unit 0 22 [QPNRPM3^`S2:9nHD^FD<1
+R4
+R5
+r1
+!s85 0
+!i10b 1
+!s100 MGdfo^9>dG;blEA27Sh[L1
+IR9b9RW1<LJ><Hm>z<HO3m0
+!s105 mac_tb_sv_unit
+S1
+R1
+Z22 w1768631203
+Z23 8mac_tb.sv
+Z24 Fmac_tb.sv
+!i122 30
+L0 2 58
+R9
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Tmac_tb_opt
+!s110 1768631506
+V3;B8TOGe[X@ChmElzCOk51
+04 6 4 work mac_tb fast 0
+!s124 OEM100
+o+acc
+R14
+nmac_tb_opt
+OL;O;2021.3_1;73
+Xmac_tb_sv_unit
+R2
+R3
+R4
+V[QPNRPM3^`S2:9nHD^FD<1
+r1
+!s85 0
+!i10b 1
+!s100 T1?PRRk0lMeV[G2i0O8jD0
+I[QPNRPM3^`S2:9nHD^FD<1
+!i103 1
+S1
+R1
+R22
+R23
+R24
+!i122 30
+R15
+R9
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+XMUL_package
+R2
+R4
+!i10b 1
+!s100 5U3SJNCMj[DMzV9g_hR?01
+IliR>;0Zkkzi;b4Qg`lI:F3
+S1
+R1
+w1768584876
+8MUL_package.sv
+FMUL_package.sv
+!i122 30
+R15
+VliR>;0Zkkzi;b4Qg`lI:F3
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+n@m@u@l_package
+vRCA
+R2
+R3
+DXx4 work 11 RCA_sv_unit 0 22 7MnILJ7?OZ7GeR3G3<V3]1
+R4
+R5
+r1
+!s85 0
+!i10b 1
+!s100 TZ0nLMMZ8o6CIa?GKXaYf2
+IIVjcSOEB4P4gAI;d9:WJl2
+!s105 RCA_sv_unit
+S1
+R1
+Z25 w1768626102
+Z26 8RCA.sv
+Z27 FRCA.sv
+!i122 30
+L0 2 26
+R9
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+n@r@c@a
+XRCA_sv_unit
+R2
+R3
+R4
+V7MnILJ7?OZ7GeR3G3<V3]1
+r1
+!s85 0
+!i10b 1
+!s100 Vo0nP3egMF:z23_e2NDV62
+I7MnILJ7?OZ7GeR3G3<V3]1
+!i103 1
+S1
+R1
+R25
+R26
+R27
+!i122 30
+R15
+R9
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+n@r@c@a_sv_unit

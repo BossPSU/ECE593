@@ -1,0 +1,84 @@
+# //  Questa Sim-64
+# //  Version 2021.3_1 linux_x86_64 Aug 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do run_MAC.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 22:31:45 on Jan 16,2026
+# vlog -reportprogress 300 MUL_package.sv FA.sv HA.sv RCA.sv ece593w26_mul.sv ece593w26_acc.sv ece593w26_mac.sv mac_tb.sv 
+# -- Compiling package MUL_package
+# -- Compiling module FA
+# -- Compiling module HA
+# -- Compiling package RCA_sv_unit
+# -- Importing package MUL_package
+# -- Compiling module RCA
+# -- Compiling package ece593w26_mul_sv_unit
+# -- Compiling module ece593w26_mul
+# -- Compiling package ece593w26_acc_sv_unit
+# -- Compiling module ece593w26_acc
+# -- Compiling package ece593w26_mac_sv_unit
+# -- Compiling module ece593w26_mac
+# -- Compiling package mac_tb_sv_unit
+# -- Compiling module mac_tb
+# 
+# Top level modules:
+# 	mac_tb
+# End time: 22:31:45 on Jan 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 22:31:45 on Jan 16,2026
+# vopt -reportprogress 300 work.mac_tb -o mac_tb_opt "+acc" 
+# 
+# Top level modules:
+# 	mac_tb
+# 
+# Analyzing design...
+# -- Loading module mac_tb
+# -- Loading module ece593w26_mac
+# -- Loading module ece593w26_mul
+# -- Loading module HA
+# -- Loading module FA
+# -- Loading module RCA
+# -- Loading module ece593w26_acc
+# Incremental compilation check found no design-units have changed.
+# Optimized design name is mac_tb_opt
+# End time: 22:31:46 on Jan 16,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim mac_tb_opt 
+# Start time: 22:31:46 on Jan 16,2026
+# Loading sv_std.std
+# Loading work.MUL_package(fast)
+# Loading work.mac_tb_sv_unit(fast)
+# Loading work.mac_tb(fast)
+# Loading work.ece593w26_mac_sv_unit(fast)
+# Loading work.ece593w26_mac(fast)
+# Loading work.ece593w26_mul_sv_unit(fast)
+# Loading work.ece593w26_mul(fast)
+# Loading work.HA(fast)
+# Loading work.FA(fast)
+# Loading work.RCA_sv_unit(fast)
+# Loading work.RCA(fast)
+# Loading work.ece593w26_acc_sv_unit(fast)
+# Loading work.ece593w26_acc(fast)
+# ---- Completed 10000 tests ----
+# ---- Completed 20000 tests ----
+# ---- Completed 30000 tests ----
+# ---- Completed 40000 tests ----
+# ---- Completed 50000 tests ----
+# ---- Completed 60000 tests ----
+# FAILS: 0
+# ** Note: $stop    : mac_tb.sv(57)
+#    Time: 26214480 ns  Iteration: 0  Instance: /mac_tb
+# Break in Module mac_tb at mac_tb.sv line 57
+# End time: 23:47:55 on Jan 16,2026, Elapsed time: 1:16:09
+# Errors: 0, Warnings: 0
