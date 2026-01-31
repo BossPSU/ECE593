@@ -1,0 +1,196 @@
+# do run_func_cov.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 20:45:07 on Jan 30,2026
+# vlog "+acc" func_cov.sv func_cov_tb.sv 
+# -- Compiling module func_cov
+# -- Compiling module func_cov_tb
+# 
+# Top level modules:
+# 	func_cov_tb
+# End time: 20:45:07 on Jan 30,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -coverage work.func_cov_tb -voptargs=""+cover=bcesfx"" 
+# Start time: 20:45:07 on Jan 30,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "func_cov(fast)".
+# //  Questa Sim-64
+# //  Version 2021.3_1 linux_x86_64 Aug 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.func_cov_tb(fast)
+# Loading work.func_cov(fast)
+# TB completed. Check coverage report for bin hits.
+# ** Note: $stop    : func_cov_tb.sv(124)
+#    Time: 235 ns  Iteration: 1  Instance: /func_cov_tb
+# Break in Module func_cov_tb at func_cov_tb.sv line 124
+# Stopped at func_cov_tb.sv line 124
+# Coverage Report by instance with details
+# 
+# =================================================================================
+# === Instance: /func_cov_tb/dut
+# === Design Unit: work.func_cov
+# =================================================================================
+# 
+# Covergroup Coverage:
+#     Covergroups                      2        na        na   100.00%
+#         Coverpoints/Crosses          5        na        na        na
+#             Covergroup Bins          8         8         0   100.00%
+# ----------------------------------------------------------------------------------------------------------
+# Covergroup                                             Metric       Goal       Bins    Status               
+#                                                                                                          
+# ----------------------------------------------------------------------------------------------------------
+#  TYPE /func_cov_tb/dut/cg_inputs                      100.00%        100          -    Covered              
+#     covered/total bins:                                     4          4          -                      
+#     missing/total bins:                                     0          4          -                      
+#     % Hit:                                            100.00%        100          -                      
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint Z                                      100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint U                                      100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#  Covergroup instance \/func_cov_tb/dut/cg1            100.00%        100          -    Covered              
+#     covered/total bins:                                     4          4          -                      
+#     missing/total bins:                                     0          4          -                      
+#     % Hit:                                            100.00%        100          -                      
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         ignore_bin xy_11                                    1                     -    Occurred             
+#         bin xy_00                                          18          1          -    Covered              
+#         default bin xy_others                               3                     -    Occurred             
+#     Coverpoint Z                                      100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin z_rise                                          2          1          -    Covered              
+#         bin z_fall                                          2          1          -    Covered              
+#     Coverpoint U                                      100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin u_3_consec                                      3          1          -    Covered              
+#  TYPE /func_cov_tb/dut/cg_ctrl                        100.00%        100          -    Covered              
+#     covered/total bins:                                     4          4          -                      
+#     missing/total bins:                                     0          4          -                      
+#     % Hit:                                            100.00%        100          -                      
+#     Coverpoint st                                     100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#  Covergroup instance \/func_cov_tb/dut/cg2            100.00%        100          -    Covered              
+#     covered/total bins:                                     4          4          -                      
+#     missing/total bins:                                     0          4          -                      
+#     % Hit:                                            100.00%        100          -                      
+#     Coverpoint st                                     100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin fsm_seq                                         1          1          -    Covered              
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin tv_wild_0x                                     19          1          -    Covered              
+#         bin tv_10_twice                                     1          1          -    Covered              
+#         bin tv_11                                           1          1          -    Covered              
+# 
+# COVERGROUP COVERAGE:
+# ----------------------------------------------------------------------------------------------------------
+# Covergroup                                             Metric       Goal       Bins    Status               
+#                                                                                                          
+# ----------------------------------------------------------------------------------------------------------
+#  TYPE /func_cov_tb/dut/cg_inputs                      100.00%        100          -    Covered              
+#     covered/total bins:                                     4          4          -                      
+#     missing/total bins:                                     0          4          -                      
+#     % Hit:                                            100.00%        100          -                      
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint Z                                      100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint U                                      100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#  Covergroup instance \/func_cov_tb/dut/cg1            100.00%        100          -    Covered              
+#     covered/total bins:                                     4          4          -                      
+#     missing/total bins:                                     0          4          -                      
+#     % Hit:                                            100.00%        100          -                      
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         ignore_bin xy_11                                    1                     -    Occurred             
+#         bin xy_00                                          18          1          -    Covered              
+#         default bin xy_others                               3                     -    Occurred             
+#     Coverpoint Z                                      100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin z_rise                                          2          1          -    Covered              
+#         bin z_fall                                          2          1          -    Covered              
+#     Coverpoint U                                      100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin u_3_consec                                      3          1          -    Covered              
+#  TYPE /func_cov_tb/dut/cg_ctrl                        100.00%        100          -    Covered              
+#     covered/total bins:                                     4          4          -                      
+#     missing/total bins:                                     0          4          -                      
+#     % Hit:                                            100.00%        100          -                      
+#     Coverpoint st                                     100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#  Covergroup instance \/func_cov_tb/dut/cg2            100.00%        100          -    Covered              
+#     covered/total bins:                                     4          4          -                      
+#     missing/total bins:                                     0          4          -                      
+#     % Hit:                                            100.00%        100          -                      
+#     Coverpoint st                                     100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin fsm_seq                                         1          1          -    Covered              
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin tv_wild_0x                                     19          1          -    Covered              
+#         bin tv_10_twice                                     1          1          -    Covered              
+#         bin tv_11                                           1          1          -    Covered              
+# 
+# TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 2
+# 
+# Total Coverage By Instance (filtered view): 100.00%
+# 
+# 

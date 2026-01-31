@@ -1,0 +1,99 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+!s11f vlog 2021.3_1 2021.08, Aug 15 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/dboss/common/Documents/ECE593/ECE593/hw2/func_cov
+T_opt
+!s110 1769834708
+VI`JT1c1jc0eMBakWH_SC;0
+04 11 4 work func_cov_tb fast 0
+=1-000ae431a4f1-697d88d3-b4222-29693e
+!s102 +cover=bcesfx
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +cover=bcesfx
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.3_1;73
+vfunc_cov
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1769834707
+!i10b 1
+!s100 lHeYf6i>AoJYEbOKR78z[1
+IA`obSHB:1;GH;[4Aco5dj0
+S1
+R1
+w1769834441
+8func_cov.sv
+Ffunc_cov.sv
+!i122 8
+L0 13 98
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.3_1;73
+r1
+!s85 0
+31
+Z7 !s108 1769834707.000000
+Z8 !s107 func_cov_tb.sv|func_cov.sv|
+Z9 !s90 +acc|func_cov.sv|func_cov_tb.sv|
+!i113 0
+Z10 o+acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vfunc_cov_tb
+R3
+R4
+!i10b 1
+!s100 N7ja^2T027X^XlNAbQ]lT3
+I?dDBeN^N?YD^DMFdoXB7R0
+S1
+R1
+w1769834694
+Z11 8func_cov_tb.sv
+Z12 Ffunc_cov_tb.sv
+!i122 8
+Z13 L0 15 113
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R2
+vtb_func_cov
+R3
+!s110 1769830529
+!i10b 1
+!s100 Un0WEKSX4cFPI@HYN0:YK1
+I[`V;WFb<AF3b2B=lX0MbQ1
+S1
+R1
+w1769829704
+R11
+R12
+!i122 1
+R13
+R5
+R6
+r1
+!s85 0
+31
+!s108 1769830529.000000
+R8
+!s90 -reportprogress|300|+acc|func_cov.sv|func_cov_tb.sv|
+!i113 0
+R10
+R2

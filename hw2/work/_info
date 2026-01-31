@@ -1,0 +1,114 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.3_1 2021.08, Aug 15 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/dboss/common/Documents/ECE593/ECE593/hw2
+vcode_cov
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1769746042
+!i10b 1
+!s100 4F9<eScjNdZMdMU<^bG3W3
+ILGl1mkXFlS25bPD20gCM>2
+S1
+R1
+w1769746017
+8code_cov.sv
+Fcode_cov.sv
+!i122 19
+L0 10 133
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.3_1;73
+r1
+!s85 0
+31
+Z6 !s108 1769746041.000000
+Z7 !s107 code_cov_tb.sv|code_cov.sv|
+Z8 !s90 -cover|sbcef|+acc|code_cov.sv|code_cov_tb.sv|
+!i113 0
+Z9 !s102 -cover sbcef
+Z10 o-cover sbcef +acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z11 tCvgOpt 0
+vcode_cov_tb
+R2
+R3
+!i10b 1
+!s100 E4_mo:o<VYN8`7R`Pm61I0
+Ii6nPZJI@0WQ31Z>92fVl=2
+S1
+R1
+w1769745689
+Z12 8code_cov_tb.sv
+Z13 Fcode_cov_tb.sv
+!i122 19
+L0 3 91
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R11
+Tcode_cov_tb_opt
+R3
+ViSW@IeQ:V5SQUnK:iRFMG2
+04 11 4 work code_cov_tb fast 0
+!s124 OEM100
+o+acc
+R11
+ncode_cov_tb_opt
+OL;O;2021.3_1;73
+vtb_code_cov
+R2
+!s110 1769742502
+!i10b 1
+!s100 YN_iV^OD=jlF2?MYNboF=1
+I95Ajb8457Y;T0>7dJFBjY2
+S1
+R1
+w1769741603
+R12
+R13
+!i122 0
+L0 3 92
+R4
+R5
+r1
+!s85 0
+31
+!s108 1769742501.000000
+R7
+!s90 -cover|sbcef|code_cov.sv|code_cov_tb.sv|
+!i113 0
+R9
+o-cover sbcef -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R11
