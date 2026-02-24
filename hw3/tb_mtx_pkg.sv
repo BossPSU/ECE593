@@ -1,4 +1,5 @@
-package tb_mtx_pkg.sv;
+import mtx_interface::*;
+package tb_mtx_pkg;
 
 	//transaction
 	class mtx_transaction #(int WIDTH=8, int N=3);
@@ -8,6 +9,9 @@ package tb_mtx_pkg.sv;
 		rand logic [WIDTH-1:0] B [N-1:0][N-1:0];
 		//output
 		logic [2*WIDTH-1:0] C [N-1:0][N-1:0];
+		
+		int unsigned mode;
+		int unsigned txn_id;
 		
 		constraint zero_a {
 			(mode == 1) -> { foreach(A[i,j]) A[i][j] == 8'h00; }
@@ -27,6 +31,18 @@ package tb_mtx_pkg.sv;
 			(mode == 3) -> { foreach(A[i,j]) A[i][j] == 8'hFF; }
 		}
 		
+		function new(int unisgned m = 0, int unsigned id = 0);
+			mode = m;
+			txn_id = id;
+		endfunction
+		
+		function mtx_transaction#(WIDTH,N) clone();
+			mtx_transaction#(WIDTH,N) t = new(mode, txn_id);
+			t.A = this.A;
+			t.B = this.B;
+			t.C = this.C;
+			return t;
+		endfunction
 	endclass
 	
 	//generator
@@ -35,26 +51,29 @@ package tb_mtx_pkg.sv;
 		mailbox #(mtx_transaction) gen2drv;
 		int unsigned num_rand;
 		
+		event gen_done;
+		
 		function new(mailbox #(mtx_transaction) mb, int unsigned n = 1000);
 			gen2driver = mb;
 			num_rand = n;
 		endfunction
 		
 		task run();
-			mtx_transaction tx;
+			mtx_transaction#(WIDTH,N) tx;
+			int unsigned id = 0;
 			
 			//test corner cases (mode 1-3)
-			tx = new(1);
-			gen2drv.put(tx);
-			tx = new(2);
-			gen2drv.put(tx);
-			tx = new(3);
-			gen2drv.put(tx);
+			tx = new(1,id++);
+			gen2drv.put(tx.clone());
+			tx = new(2,id++);
+			gen2drv.put(tx.clone());
+			tx = new(3,id++);
+			gen2drv.put(tx.clone());
 			
 			//test 1000 cases (transactions are random without constraints)
 			for (int i = 0; i < num_rand; i++) begin
-				tx = new();
-				gen2drv.put(tx);
+				tx = new(0,id++);
+				gen2drv.put(tx.clone());
 			end
 		endtask
 	endclass : generator
@@ -74,9 +93,9 @@ package tb_mtx_pkg.sv;
       			vif.drv_cb.start <= 1'b0;
       			foreach (vif.drv_cb.A[i,j]) vif.drv_cb.A[i][j] <= '0;
       			foreach (vif.drv_cb.B[i,j]) vif.drv_cb.B[i][j] <= '0;
-      			repeat (2) @(vif.drv_cb);
+      			repeat (4) @(vif.drv_cb);
       			vif.drv_cb.rst <= 1'b0;
-      			repeat (1) @(vif.drv_cb);
+      			@(vif.drv_cb);
       		endtask
       		
       		task drive_one(mtx_transaciton#(WIDTH,N) tr);
@@ -91,9 +110,7 @@ package tb_mtx_pkg.sv;
       			// Hold A/B stable until done asserted (even though C isn't valid yet)
       			do @(vif.drv_cb); while (vif.drv_cb.done !== 1'b1);
 
-      			// After done, you may release A/B (optional)
-      			// foreach (vif.drv_cb.A[i,j]) vif.drv_cb.A[i][j] <= 'x;
-      			// foreach (vif.drv_cb.B[i,j]) vif.drv_cb.B[i][j] <= 'x;
+      			repeat (3) @(vif.drv_cb);
 		endtask
 		
 		task run();
@@ -116,10 +133,12 @@ package tb_mtx_pkg.sv;
     		
     		task run();
     			mtx_transaction#(WIDTH,N) tr;
+    			logic prev_start = 1'b0;
+    			
     			forever begin
-    			@(vif.mon_cb);
-    			if (vif.mon_cb.start === 1'b1) begin
-    				tr = new();
+    				@(vif.mon_cb);
+    				if (vif.mon_cb.start === 1'b1 && prev_start === 1'b0) begin
+    					tr = new();
     					foreach (vif.mon_cb.A[i,j]) tr.A[i][j] = vif.mon_cb.A[i][j];
           				foreach (vif.mon_cb.B[i,j]) tr.B[i][j] = vif.mon_cb.B[i][j];
 					do @(vif.mon_cb);
@@ -129,9 +148,135 @@ package tb_mtx_pkg.sv;
 					foreach (vif.mon_cb.C[i,j]) tr.C_obs[i][j] = vif.mon_cb.C[i][j];			
 					mon2scb.put(tr);
 				end
+				
+				prev_start = vif.mon_cb.start;
 			end
 		endtask
 	endclass
 	
+	class mtx_scoreboard #(int WIDTH=8, int N=3);
 	
-			
+		localparam int ACC_BITS = 2*WIDTH;
+		
+		mailbox #(mtx_transaction#(WIDTH,N)) mon2scb;
+		
+		covergroup cg_elem with function sample(logic [WIDTH-1:0] av, logic [WIDTH-1:0] bv);
+			cp_a : coverpoint av {
+				bins zero = {'0};
+        			bins one  = {1};
+        			bins max  = {{WIDTH{1'b1}}};
+        			bins mid  = {[2 : (1<<WIDTH)-2]};
+        		}
+        		cp_b : coverpoint bv {
+        			bins zero = {'0};
+        			bins one  = {1};
+        			bins max  = {{WIDTH{1'b1}}};
+        			bins mid  = {[2 : (1<<WIDTH)-2]};
+			}
+			cross_ab : cross cp_a, cp_b;
+		endgroup
+		
+		cg_elem cg;
+		
+		function new(mailbox #(mtx_transactions#(WIDTH,N)) mb);
+			mon2scb = mb;
+			cg = new();
+		endfunction
+		
+		function automatic logic [ACC_BITS-1:0] golden_cij(
+			input logic [WIDTH-1:0] a_row [N],
+        		input logic [WIDTH-1:0] b_col [N]
+        	};
+        		logic [ACC_BITS-1:0] acc;
+      			logic [ACC_BITS-1:0] prod;
+      			acc = '0;
+
+      			for (int k=0; k<N; k++) begin
+      				prod = logic'(a_row[k]) * logic'(b_col[k]);
+      				acc = acc+prod;
+      			end
+      			return acc;
+      		endfunction
+      		
+      		task run();
+      			mtx_transaction#(WIDTH,N) tr;
+      			
+      			logic [ACC_BITS-1:0] exp_c [N-1:0][N-1:0];
+      			logic [WIDTH-1:0]    a_row [N];
+      			logic [WIDTH-1:0]    b_col [N];
+
+      			bit pass;
+
+      			forever begin
+      				mon2scb.get(tr);
+      				pass = 1;
+      				
+      				for (int i=0; i<N; i++) begin
+        				for (int j=0; j<N; j++) begin
+          					for (int k=0; k<N; k++) begin
+            						a_row[k] = tr.A[i][k];
+            						b_col[k] = tr.B[k][j];
+          					end
+          					exp_c[i][j] = golden_cij(a_row, b_col);
+        				end
+      				end
+      				
+      				for (int i=0; i<N; i++)
+        				for (int j=0; j<N; j++)
+          					cg.sample(tr.A[i][j], tr.B[i][j]);
+          		end
+          	endtask
+          	
+          	function void report();
+          		$display("FCov    : %0.2f%%", cg.get_coverage());
+          	endfunction
+          endclass
+          
+          class mtx_environment #(int WIDTH=8, int N=3);
+          	
+          	mtx_generator                 gen;
+  		mtx_driver      #(WIDTH,N)    drv;
+  		monitor         #(WIDTH,N)    mon;   
+  		mtx_scoreboard  #(WIDTH,N)    scb;
+
+  		// Mailboxes
+  		mailbox #(mtx_transaction#(WIDTH,N)) gen2drv;
+  		mailbox #(mtx_transaction#(WIDTH,N)) mon2scb;
+
+  		// Virtual interfaces
+  		virtual mtx_if#(WIDTH,N).DRV drv_vif;
+  		virtual mtx_if#(WIDTH,N).MON mon_vif;
+
+  		int unsigned num_rand;
+  		int unsigned total;
+  		
+  		function new(virtual mtx_if#(WIDTH,N).DRV dv,virtual mtx_if#(WIDTH,N).MON mv,int unsigned n = 1000);
+  		
+  			drv_vif = dv;
+    			mon_vif = mv;
+    			num_rand = n;
+    			total    = n + 3;
+    			gen2drv  = new();
+    			mon2scb  = new();
+    			gen = new(gen2drv, num_rand);
+    			drv = new(drv_vif, gen2drv);
+    			mon = new(mon_vif, mon2scb);
+    			scb = new(mon2scb);
+    			
+    		endfunction
+    		
+    		task run();
+    			fork
+    				gen.run();
+    				drv.run();
+    				mon.run();
+    				scb.run();
+    			join_none
+    			
+    			wait (scb.num_checked == total);
+    			repeat(5) @(drv_vif.drv_cb);
+    			scb.report();
+    		endtask
+    	endclass
+	
+endpackage 		
