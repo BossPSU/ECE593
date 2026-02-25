@@ -14,7 +14,7 @@
 # //
 # do run.do
 # QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
-# Start time: 19:11:18 on Feb 24,2026
+# Start time: 19:19:57 on Feb 24,2026
 # vlog -reportprogress 300 -cover sbcef "+acc" mtx_interface.sv mtx_mul_unit.sv tb_mtx_pkg.sv tb_mtx_mul_unit.sv 
 # -- Compiling interface mtx_if
 # -- Compiling module dff
@@ -33,10 +33,10 @@
 # 
 # Top level modules:
 # 	tb_mtx_mul_unit
-# End time: 19:11:18 on Feb 24,2026, Elapsed time: 0:00:00
+# End time: 19:19:57 on Feb 24,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 2
 # QuestaSim-64 vopt 2021.3_1 Compiler 2021.08 Aug 15 2021
-# Start time: 19:11:18 on Feb 24,2026
+# Start time: 19:19:57 on Feb 24,2026
 # vopt -reportprogress 300 work.tb_mtx_mul_unit -o tb_mtx_mult_unit_opt "+acc" 
 # 
 # Top level modules:
@@ -58,10 +58,10 @@
 # -- Optimizing package tb_mtx_mul_unit_sv_unit(fast)
 # -- Optimizing module tb_mtx_mul_unit(fast)
 # Optimized design name is tb_mtx_mult_unit_opt
-# End time: 19:11:19 on Feb 24,2026, Elapsed time: 0:00:01
+# End time: 19:19:58 on Feb 24,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vsim -coverage tb_mtx_mult_unit_opt 
-# Start time: 19:11:19 on Feb 24,2026
+# Start time: 19:19:58 on Feb 24,2026
 # Loading sv_std.std
 # Loading work.mtx_if(fast)
 # Loading work.tb_mtx_pkg(fast)
@@ -19115,5 +19115,5 @@
 # === TB DONE ===
 # ** Note: $finish    : tb_mtx_mul_unit.sv(30)
 #    Time: 90375 ns  Iteration: 3  Instance: /tb_mtx_mul_unit
-# End time: 19:11:36 on Feb 24,2026, Elapsed time: 0:00:17
+# End time: 19:20:27 on Feb 24,2026, Elapsed time: 0:00:29
 # Errors: 9015, Warnings: 0

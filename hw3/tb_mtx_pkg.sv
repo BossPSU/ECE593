@@ -151,16 +151,16 @@ package tb_mtx_pkg;
     					tr_in = new();
     					foreach (vif.mon_cb.A[i,j]) tr_in.A[i][j] = vif.mon_cb.A[i][j];
           				foreach (vif.mon_cb.B[i,j]) tr_in.B[i][j] = vif.mon_cb.B[i][j];
-          				pending = {pending, tr_in};
+          				pending.push_back(tr_in);
 				end
 					
 				if (vif.mon_cb.done && !prev_done) begin
 					fork
 						begin : cap_after_done
 							repeat (3) @(vif.mon_cb);
-							if ($size(pending) >0) begin
-								tr_out = pending[0];
-								pending.delete(0);
+							if (pending.size() >0) begin
+								tr_out = pending.pop_front();
+								
 								foreach (vif.mon_cb.C[i,j]) tr_out.C[i][j] = vif.mon_cb.C[i][j];
 								mon2scb.put(tr_out);
 								count++;
