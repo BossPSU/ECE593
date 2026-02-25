@@ -1,4 +1,3 @@
-import mtx_interface::*;
 package tb_mtx_pkg;
 
 	//transaction
@@ -28,10 +27,10 @@ package tb_mtx_pkg;
 			(mode == 3) -> { foreach(A[i,j]) A[i][j] == 8'hFF; }
 		}
 		constraint stress_b {
-			(mode == 3) -> { foreach(A[i,j]) A[i][j] == 8'hFF; }
+			(mode == 3) -> { foreach(B[i,j]) B[i][j] == 8'hFF; }
 		}
 		
-		function new(int unisgned m = 0, int unsigned id = 0);
+		function new(int unsigned m = 0, int unsigned id = 0);
 			mode = m;
 			txn_id = id;
 		endfunction
@@ -46,15 +45,15 @@ package tb_mtx_pkg;
 	endclass
 	
 	//generator
-	class mtx_generator;
+	class mtx_generator #(int WIDTH=8, int N=3);
 		
-		mailbox #(mtx_transaction) gen2drv;
+		mailbox #(mtx_transaction#(WIDTH,N)) gen2drv;
 		int unsigned num_rand;
 		
 		event gen_done;
 		
-		function new(mailbox #(mtx_transaction) mb, int unsigned n = 1000);
-			gen2driver = mb;
+		function new(mailbox #(mtx_transaction#(WIDTH,N)) mb, int unsigned n = 1000);
+			gen2drv = mb;
 			num_rand = n;
 		endfunction
 		
@@ -64,23 +63,27 @@ package tb_mtx_pkg;
 			
 			//test corner cases (mode 1-3)
 			tx = new(1,id++);
+			assert(tx.randomize());
 			gen2drv.put(tx.clone());
 			tx = new(2,id++);
+			assert(tx.randomize());
 			gen2drv.put(tx.clone());
 			tx = new(3,id++);
+			assert(tx.randomize());
 			gen2drv.put(tx.clone());
 			
 			//test 1000 cases (transactions are random without constraints)
 			for (int i = 0; i < num_rand; i++) begin
 				tx = new(0,id++);
+				assert(tx.randomize());
 				gen2drv.put(tx.clone());
 			end
 		endtask
-	endclass : generator
+	endclass
 	
 	class mtx_driver #(int WIDTH=8, int N=3);
 	
-		virtual mxt_if#(WIDTH,N).DRV vif
+		virtual mtx_if#(WIDTH,N).DRV vif;
 		mailbox #(mtx_transaction#(WIDTH,N)) gen2drv;
 		
 		function new(virtual mtx_if#(WIDTH,N).DRV vi, mailbox #(mtx_transaction#(WIDTH,N)) m);
@@ -91,30 +94,32 @@ package tb_mtx_pkg;
 		task apply_reset();
 			vif.drv_cb.rst   <= 1'b1;
       			vif.drv_cb.start <= 1'b0;
-      			foreach (vif.drv_cb.A[i,j]) vif.drv_cb.A[i][j] <= '0;
-      			foreach (vif.drv_cb.B[i,j]) vif.drv_cb.B[i][j] <= '0;
+      			foreach (vif.A[i,j]) vif.A[i][j] <= '0;
+      			foreach (vif.B[i,j]) vif.B[i][j] <= '0;
       			repeat (4) @(vif.drv_cb);
-      			vif.drv_cb.rst <= 1'b0;
+      			vif.rst <= 1'b0;
       			@(vif.drv_cb);
       		endtask
       		
-      		task drive_one(mtx_transaciton#(WIDTH,N) tr);
-      			foreach (vif.drv_cb.A[i,j]) vif.drv_cb.A[i][j] <= tr.A[i][j];
-      			foreach (vif.drv_cb.B[i,j]) vif.drv_cb.B[i][j] <= tr.B[i][j];
-
+      		task drive_one(mtx_transaction#(WIDTH,N) tr);
       			@(vif.drv_cb);
-      			vif.drv_cb.start <= 1'b1;
+      			foreach (vif.A[i,j]) vif.A[i][j] <= tr.A[i][j];
+      			foreach (vif.B[i,j]) vif.B[i][j] <= tr.B[i][j];
+			vif.start <= 1'b0;
       			@(vif.drv_cb);
-      			vif.drv_cb.start <= 1'b0;
+      			vif.start <= 1'b1;
+      			@(vif.drv_cb);
+      			vif.start <= 1'b0;
 
       			// Hold A/B stable until done asserted (even though C isn't valid yet)
-      			do @(vif.drv_cb); while (vif.drv_cb.done !== 1'b1);
+      			do @(vif.drv_cb); while (vif.done !== 1'b1);
 
       			repeat (3) @(vif.drv_cb);
 		endtask
 		
 		task run();
 			mtx_transaction#(WIDTH,N) tr;
+			apply_reset();
 			forever begin
 				gen2drv.get(tr);
 				drive_one(tr);
@@ -126,7 +131,7 @@ package tb_mtx_pkg;
 		virtual mtx_if#(WIDTH,N).MON vif;
     		mailbox #(mtx_transaction#(WIDTH,N)) mon2scb;
     		
-    		function new(virtual mtx_if#(WIDTH,N).MON vi, mailbox (#mtx_transaction#(WIDTH,N)) m);
+    		function new(virtual mtx_if#(WIDTH,N).MON vi, mailbox #(mtx_transaction#(WIDTH,N)) m);
     			vif = vi;
     			mon2scb = m;
     		endfunction
@@ -145,7 +150,7 @@ package tb_mtx_pkg;
 					while (vif.mon_cb.done !== 1'b1);
 					repeat (3) @(vif.mon_cb);
 					
-					foreach (vif.mon_cb.C[i,j]) tr.C_obs[i][j] = vif.mon_cb.C[i][j];			
+					foreach (vif.mon_cb.C[i,j]) tr.C[i][j] = vif.mon_cb.C[i][j];			
 					mon2scb.put(tr);
 				end
 				
@@ -160,7 +165,11 @@ package tb_mtx_pkg;
 		
 		mailbox #(mtx_transaction#(WIDTH,N)) mon2scb;
 		
-		covergroup cg_elem with function sample(logic [WIDTH-1:0] av, logic [WIDTH-1:0] bv);
+		int unsigned num_checked=0;
+    		int unsigned pass_cnt=0;
+    		int unsigned fail_cnt=0;
+		
+		covergroup cg with function sample(logic [WIDTH-1:0] av, logic [WIDTH-1:0] bv);
 			cp_a : coverpoint av {
 				bins zero = {'0};
         			bins one  = {1};
@@ -176,9 +185,8 @@ package tb_mtx_pkg;
 			cross_ab : cross cp_a, cp_b;
 		endgroup
 		
-		cg_elem cg;
 		
-		function new(mailbox #(mtx_transactions#(WIDTH,N)) mb);
+		function new(mailbox #(mtx_transaction#(WIDTH,N)) mb);
 			mon2scb = mb;
 			cg = new();
 		endfunction
@@ -186,7 +194,7 @@ package tb_mtx_pkg;
 		function automatic logic [ACC_BITS-1:0] golden_cij(
 			input logic [WIDTH-1:0] a_row [N],
         		input logic [WIDTH-1:0] b_col [N]
-        	};
+        	);
         		logic [ACC_BITS-1:0] acc;
       			logic [ACC_BITS-1:0] prod;
       			acc = '0;
@@ -218,23 +226,32 @@ package tb_mtx_pkg;
             						b_col[k] = tr.B[k][j];
           					end
           					exp_c[i][j] = golden_cij(a_row, b_col);
+        				 	if (tr.C[i][j] !== exp_c[i][j]) begin
+      							$error("[SCB] MISMATCH C[%0d][%0d] got=%0h exp=%0h", i, j, tr.C[i][j], exp_c[i][j]);
+     							pass = 0;
+    						end
         				end
       				end
       				
       				for (int i=0; i<N; i++)
         				for (int j=0; j<N; j++)
           					cg.sample(tr.A[i][j], tr.B[i][j]);
+          			if(pass) pass_cnt++;
+          			else fail_cnt++;
+          			
+          			num_checked++;
           		end
           	endtask
           	
           	function void report();
+          		$display("Checked=%0d Pass=%0d Fail=%0d", num_checked, pass_cnt, fail_cnt);
           		$display("FCov    : %0.2f%%", cg.get_coverage());
           	endfunction
           endclass
           
           class mtx_environment #(int WIDTH=8, int N=3);
           	
-          	mtx_generator                 gen;
+          	mtx_generator   #(WIDTH,N)    gen;
   		mtx_driver      #(WIDTH,N)    drv;
   		monitor         #(WIDTH,N)    mon;   
   		mtx_scoreboard  #(WIDTH,N)    scb;
