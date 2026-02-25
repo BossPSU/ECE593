@@ -117,13 +117,14 @@ package tb_mtx_pkg;
       			repeat (3) @(vif.drv_cb);
 		endtask
 		
-		task run();
+		task run(int unsigned total);
 			mtx_transaction#(WIDTH,N) tr;
 			apply_reset();
-			forever begin
+			repeat (total) begin
 				gen2drv.get(tr);
 				drive_one(tr);
 			end
+			$display("[DRV] done driving %0d", total);
 		endtask
 	endclass
 	
@@ -136,25 +137,29 @@ package tb_mtx_pkg;
     			mon2scb = m;
     		endfunction
     		
-    		task run();
+    		task run(int unsigned total);
     			mtx_transaction#(WIDTH,N) tr;
-    			logic prev_start = 1'b0;
+    			logic prev_start = 0;
+    			logic prev_done = 0;
+    			int count = 0;
     			
     			forever begin
     				@(vif.mon_cb);
-    				if (vif.mon_cb.start === 1'b1 && prev_start === 1'b0) begin
+    				if (vif.mon_cb.start && !prev_start) begin
     					tr = new();
     					foreach (vif.mon_cb.A[i,j]) tr.A[i][j] = vif.mon_cb.A[i][j];
           				foreach (vif.mon_cb.B[i,j]) tr.B[i][j] = vif.mon_cb.B[i][j];
-					do @(vif.mon_cb);
-					while (vif.mon_cb.done !== 1'b1);
-					repeat (3) @(vif.mon_cb);
+				end
 					
+				if (vif.mon_cb.done && !prev_done) begin
 					foreach (vif.mon_cb.C[i,j]) tr.C[i][j] = vif.mon_cb.C[i][j];			
 					mon2scb.put(tr);
+					count++;
+					$display("[MON] captured %0d/%0d", count, total);
 				end
 				
 				prev_start = vif.mon_cb.start;
+				prev_done = vif.mon_cb.done;
 			end
 		endtask
 	endclass
@@ -285,8 +290,8 @@ package tb_mtx_pkg;
     		task run();
     			fork
     				gen.run();
-    				drv.run();
-    				mon.run();
+    				drv.run(total);
+    				mon.run(total);
     				scb.run();
     			join_none
     			
