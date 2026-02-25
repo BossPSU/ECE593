@@ -94,25 +94,25 @@ package tb_mtx_pkg;
 		task apply_reset();
 			vif.drv_cb.rst   <= 1'b1;
       			vif.drv_cb.start <= 1'b0;
-      			foreach (vif.A[i,j]) vif.A[i][j] <= '0;
-      			foreach (vif.B[i,j]) vif.B[i][j] <= '0;
+      			foreach (vif.drv_cb.A[i,j]) vif.drv_cb.A[i][j] <= '0;
+      			foreach (vif.drv_cb.B[i,j]) vif.drv_cb.B[i][j] <= '0;
       			repeat (4) @(vif.drv_cb);
-      			vif.rst <= 1'b0;
+      			vif.drv_cb.rst <= 1'b0;
       			@(vif.drv_cb);
       		endtask
       		
       		task drive_one(mtx_transaction#(WIDTH,N) tr);
       			@(vif.drv_cb);
-      			foreach (vif.A[i,j]) vif.A[i][j] <= tr.A[i][j];
-      			foreach (vif.B[i,j]) vif.B[i][j] <= tr.B[i][j];
-			vif.start <= 1'b0;
+      			foreach (vif.drv_cb.A[i,j]) vif.drv_cb.A[i][j] <= tr.A[i][j];
+      			foreach (vif.drv_cb.B[i,j]) vif.drv_cb.B[i][j] <= tr.B[i][j];
+			vif.drv_cb.start <= 1'b0;
       			@(vif.drv_cb);
-      			vif.start <= 1'b1;
+      			vif.drv_cb.start <= 1'b1;
       			@(vif.drv_cb);
-      			vif.start <= 1'b0;
+      			vif.drv_cb.start <= 1'b0;
 
       			// Hold A/B stable until done asserted (even though C isn't valid yet)
-      			do @(vif.drv_cb); while (vif.done !== 1'b1);
+      			do @(vif.drv_cb); while (vif.drv_cb.done !== 1'b1);
 
       			repeat (3) @(vif.drv_cb);
 		endtask
