@@ -132,13 +132,15 @@ package tb_mtx_pkg;
 		virtual mtx_if#(WIDTH,N).MON vif;
     		mailbox #(mtx_transaction#(WIDTH,N)) mon2scb;
     		
+    		mtx_transaction#(WIDTH,N) pending[$]; // pipeline queue
+    		
     		function new(virtual mtx_if#(WIDTH,N).MON vi, mailbox #(mtx_transaction#(WIDTH,N)) m);
     			vif = vi;
     			mon2scb = m;
     		endfunction
     		
     		task run(int unsigned total);
-    			mtx_transaction#(WIDTH,N) tr;
+    			mtx_transaction#(WIDTH,N) tr_in, tr_out;
     			logic prev_start = 0;
     			logic prev_done = 0;
     			int count = 0;
@@ -146,16 +148,20 @@ package tb_mtx_pkg;
     			forever begin
     				@(vif.mon_cb);
     				if (vif.mon_cb.start && !prev_start) begin
-    					tr = new();
-    					foreach (vif.mon_cb.A[i,j]) tr.A[i][j] = vif.mon_cb.A[i][j];
-          				foreach (vif.mon_cb.B[i,j]) tr.B[i][j] = vif.mon_cb.B[i][j];
+    					tr_in = new();
+    					foreach (vif.mon_cb.A[i,j]) tr_in.A[i][j] = vif.mon_cb.A[i][j];
+          				foreach (vif.mon_cb.B[i,j]) tr_in.B[i][j] = vif.mon_cb.B[i][j];
+          				pending.push_back(tr_in);
 				end
 					
-				if (vif.mon_cb.done && !prev_done) begin
-					foreach (vif.mon_cb.C[i,j]) tr.C[i][j] = vif.mon_cb.C[i][j];			
-					mon2scb.put(tr);
-					count++;
-					$display("[MON] captured %0d/%0d", count, total);
+				if (vif.mon_cb.done) begin
+					if (pending.size()>0)begin
+						tr_out = pending.pop_front();
+						foreach (vif.mon_cb.C[i,j]) tr_out.C[i][j] = vif.mon_cb.C[i][j];			
+						mon2scb.put(tr_out);
+						count++;
+						$display("[MON] captured %0d/%0d", count, total);
+					end
 				end
 				
 				prev_start = vif.mon_cb.start;
