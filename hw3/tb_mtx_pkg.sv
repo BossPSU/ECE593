@@ -29,6 +29,19 @@ package tb_mtx_pkg;
 		constraint stress_b {
 			(mode == 3) -> { foreach(B[i,j]) B[i][j] == 8'hFF; }
 		}
+		constraint ones_diag {
+    			(mode == 4) -> {
+				foreach(A[i,j]) A[i][j] == ((i==j) ? 8'h01 : 8'h00);
+        			foreach(B[i,j]) B[i][j] == ((i==j) ? 8'h01 : 8'h00);
+    			}
+		}
+		
+		constraint cov_sweep {
+    			(mode == 5) -> {
+        			foreach(A[i,j]) A[i][j] == (i == 0 ? 8'h00 : (i == 1 ? 8'h01 : 8'hFF));
+        			foreach(B[i,j]) B[i][j] == (j == 0 ? 8'h00 : (j == 1 ? 8'h01 : 8'hFF));
+    			}	
+		}
 		
 		function new(int unsigned m = 0, int unsigned id = 0);
 			mode = m;
@@ -61,7 +74,7 @@ package tb_mtx_pkg;
 			mtx_transaction#(WIDTH,N) tx;
 			int unsigned id = 0;
 			
-			//test corner cases (mode 1-3)
+			//test corner cases (mode 1-4)
 			tx = new(1,id++);
 			assert(tx.randomize());
 			gen2drv.put(tx.clone());
@@ -69,6 +82,12 @@ package tb_mtx_pkg;
 			assert(tx.randomize());
 			gen2drv.put(tx.clone());
 			tx = new(3,id++);
+			assert(tx.randomize());
+			gen2drv.put(tx.clone());
+			tx = new(4,id++);
+			assert(tx.randomize());
+			gen2drv.put(tx.clone());
+			tx = new(5,id++);
 			assert(tx.randomize());
 			gen2drv.put(tx.clone());
 			
@@ -157,7 +176,7 @@ package tb_mtx_pkg;
 				if (vif.mon_cb.done && !prev_done) begin
 					fork
 						begin : cap_after_done
-							repeat (3) @(vif.mon_cb);
+							repeat (2) @(vif.mon_cb);
 							if (pending.size() >0) begin
 								tr_out = pending.pop_front();
 								
@@ -292,7 +311,7 @@ package tb_mtx_pkg;
   			drv_vif = dv;
     			mon_vif = mv;
     			num_rand = n;
-    			total    = n + 3;
+    			total    = n + 5;
     			gen2drv  = new();
     			mon2scb  = new();
     			gen = new(gen2drv, num_rand);

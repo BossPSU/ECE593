@@ -15,6 +15,14 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f MIXED_VERSIONS
 13
 !s112 1.1
@@ -25,7 +33,7 @@ cModel Technology
 Z1 d/home/dboss/common/Documents/ECE593/ECE593/hw3
 vacc_unit
 Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1771990849
+Z3 !s110 1771994051
 !i10b 1
 !s100 B]ccULPlTN=QVLoIaQV5k3
 I`aOXYo7oV`QSP4WVniOoF3
@@ -34,14 +42,14 @@ R1
 Z4 w1771821806
 Z5 8mtx_mul_unit.sv
 Z6 Fmtx_mul_unit.sv
-!i122 20
+!i122 28
 L0 35 47
 Z7 VDg1SIo80bB@j0V0VzS_@n1
 Z8 OL;L;2021.3_1;73
 r1
 !s85 0
 31
-Z9 !s108 1771990849.000000
+Z9 !s108 1771994051.000000
 Z10 !s107 tb_mtx_mul_unit.sv|tb_mtx_pkg.sv|mtx_mul_unit.sv|mtx_interface.sv|
 Z11 !s90 -reportprogress|300|-cover|sbcef|+acc|mtx_interface.sv|mtx_mul_unit.sv|tb_mtx_pkg.sv|tb_mtx_mul_unit.sv|
 !i113 0
@@ -59,7 +67,7 @@ R1
 R4
 R5
 R6
-!i122 20
+!i122 28
 L0 9 10
 R7
 R8
@@ -84,7 +92,7 @@ R1
 R4
 R5
 R6
-!i122 20
+!i122 28
 L0 94 13
 R7
 R8
@@ -109,7 +117,7 @@ R1
 R4
 R5
 R6
-!i122 20
+!i122 28
 L0 21 12
 R7
 R8
@@ -134,7 +142,7 @@ R1
 R4
 R5
 R6
-!i122 20
+!i122 28
 L0 219 44
 R7
 R8
@@ -159,7 +167,7 @@ R1
 w1771983138
 8mtx_interface.sv
 Fmtx_interface.sv
-!i122 20
+!i122 28
 Z15 L0 1 0
 R7
 R8
@@ -184,7 +192,7 @@ R1
 R4
 R5
 R6
-!i122 20
+!i122 28
 L0 274 57
 R7
 R8
@@ -209,7 +217,7 @@ R1
 R4
 R5
 R6
-!i122 20
+!i122 28
 L0 109 99
 R7
 R8
@@ -225,7 +233,7 @@ R13
 R14
 vtb_mtx_mul_unit
 R2
-Z16 DXx4 work 10 tb_mtx_pkg 0 22 94<^hf=chC610zmoA=@Y63
+Z16 DXx4 work 10 tb_mtx_pkg 0 22 L4IV7L9dMl=^004Bd:<6I3
 DXx4 work 23 tb_mtx_mul_unit_sv_unit 0 22 6S@e74;kb<dHDD<gf56jb3
 R3
 R7
@@ -240,7 +248,7 @@ R1
 Z17 w1771981843
 Z18 8tb_mtx_mul_unit.sv
 Z19 Ftb_mtx_mul_unit.sv
-!i122 20
+!i122 28
 L0 3 36
 R8
 31
@@ -267,7 +275,7 @@ R1
 R17
 R18
 R19
-!i122 20
+!i122 28
 R15
 R8
 31
@@ -280,8 +288,8 @@ R13
 R14
 Ttb_mtx_mult_unit_opt
 !s11d tb_mtx_pkg /home/dboss/common/Documents/ECE593/ECE593/hw3/work 1 mtx_if 1 /home/dboss/common/Documents/ECE593/ECE593/hw3/work 
-!s110 1771990850
-V;j^33j^`@lo09Q:nSKM^>0
+!s110 1771994052
+V;K:=]hQEbIVfNWJQ@So:12
 04 15 4 work tb_mtx_mul_unit fast 0
 !s124 OEM100
 o+acc
@@ -293,16 +301,16 @@ Xtb_mtx_pkg
 R2
 R3
 !i10b 1
-!s100 mW_:FTOf[0YOS73=?@^?n1
-I94<^hf=chC610zmoA=@Y63
+!s100 ]Df;ReCW]XUaO0bXPLhN?3
+IL4IV7L9dMl=^004Bd:<6I3
 S1
 R1
-w1771990831
+w1771993119
 8tb_mtx_pkg.sv
 Ftb_mtx_pkg.sv
-!i122 20
+!i122 28
 R15
-V94<^hf=chC610zmoA=@Y63
+VL4IV7L9dMl=^004Bd:<6I3
 R8
 r1
 !s85 0
