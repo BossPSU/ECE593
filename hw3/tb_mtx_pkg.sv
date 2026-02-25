@@ -220,7 +220,7 @@ package tb_mtx_pkg;
       			acc = '0;
 
       			for (int k=0; k<N; k++) begin
-      				prod = logic'(a_row[k]) * logic'(b_col[k]);
+      				prod = ACC_BITS'(unsigned'(a_row[k])) * ACC_BITS'(unsigned'(b_col[k]));
       				acc = acc+prod;
       			end
       			return acc;
