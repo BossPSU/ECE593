@@ -1,0 +1,126 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /tb_mtx_pkg
+=== Design Unit: work.tb_mtx_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      2        na        na   100.00%
+        Coverpoints/Crosses          4        na        na        na
+            Covergroup Bins         25        25         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /tb_mtx_pkg/mtx_coverage/cg_matrix_values       100.00%        100          -    Covered              
+    covered/total bins:                                    24         24          -                      
+    missing/total bins:                                     0         24          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_a                                   100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           72          1          -    Covered              
+        bin one                                            42          1          -    Covered              
+        bin max                                            54          1          -    Covered              
+        bin mid                                          9902          1          -    Covered              
+    Coverpoint cp_b                                   100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           65          1          -    Covered              
+        bin one                                            45          1          -    Covered              
+        bin max                                            62          1          -    Covered              
+        bin mid                                          9898          1          -    Covered              
+    Cross cross_ab                                    100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <mid,mid>                                9791          1          -    Covered              
+            bin <max,mid>                                  30          1          -    Covered              
+            bin <one,mid>                                  35          1          -    Covered              
+            bin <zero,mid>                                 42          1          -    Covered              
+            bin <mid,max>                                  39          1          -    Covered              
+            bin <max,max>                                  21          1          -    Covered              
+            bin <one,max>                                   1          1          -    Covered              
+            bin <zero,max>                                  1          1          -    Covered              
+            bin <mid,one>                                  38          1          -    Covered              
+            bin <max,one>                                   1          1          -    Covered              
+            bin <one,one>                                   5          1          -    Covered              
+            bin <zero,one>                                  1          1          -    Covered              
+            bin <mid,zero>                                 34          1          -    Covered              
+            bin <max,zero>                                  2          1          -    Covered              
+            bin <one,zero>                                  1          1          -    Covered              
+            bin <zero,zero>                                28          1          -    Covered              
+ TYPE /tb_mtx_pkg/mtx_coverage/cg_modes               100.00%        100          -    Covered              
+    covered/total bins:                                     1          1          -                      
+    missing/total bins:                                     0          1          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_mode                                100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin random                                       1007          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /tb_mtx_pkg/mtx_coverage/cg_matrix_values       100.00%        100          -    Covered              
+    covered/total bins:                                    24         24          -                      
+    missing/total bins:                                     0         24          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_a                                   100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           72          1          -    Covered              
+        bin one                                            42          1          -    Covered              
+        bin max                                            54          1          -    Covered              
+        bin mid                                          9902          1          -    Covered              
+    Coverpoint cp_b                                   100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           65          1          -    Covered              
+        bin one                                            45          1          -    Covered              
+        bin max                                            62          1          -    Covered              
+        bin mid                                          9898          1          -    Covered              
+    Cross cross_ab                                    100.00%        100          -    Covered              
+        covered/total bins:                                16         16          -                      
+        missing/total bins:                                 0         16          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <mid,mid>                                9791          1          -    Covered              
+            bin <max,mid>                                  30          1          -    Covered              
+            bin <one,mid>                                  35          1          -    Covered              
+            bin <zero,mid>                                 42          1          -    Covered              
+            bin <mid,max>                                  39          1          -    Covered              
+            bin <max,max>                                  21          1          -    Covered              
+            bin <one,max>                                   1          1          -    Covered              
+            bin <zero,max>                                  1          1          -    Covered              
+            bin <mid,one>                                  38          1          -    Covered              
+            bin <max,one>                                   1          1          -    Covered              
+            bin <one,one>                                   5          1          -    Covered              
+            bin <zero,one>                                  1          1          -    Covered              
+            bin <mid,zero>                                 34          1          -    Covered              
+            bin <max,zero>                                  2          1          -    Covered              
+            bin <one,zero>                                  1          1          -    Covered              
+            bin <zero,zero>                                28          1          -    Covered              
+ TYPE /tb_mtx_pkg/mtx_coverage/cg_modes               100.00%        100          -    Covered              
+    covered/total bins:                                     1          1          -                      
+    missing/total bins:                                     0          1          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_mode                                100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin random                                       1007          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 2
+
+Total Coverage By Instance (filtered view): 100.00%
+

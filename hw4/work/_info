@@ -1,218 +1,353 @@
 m255
 K4
 z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/home/dboss/common/Documents/ECE593/ECE593/hw4
+Z1 d/home/dboss/common/Documents/ECE593/ECE593/hw4
 vacc_unit
-Z1 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z2 !s110 1772691585
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1772743181
 !i10b 1
 !s100 B]ccULPlTN=QVLoIaQV5k3
 IUW9ICV5zgXI>?mlM04LZF2
 S1
-R0
-Z3 w1771821806
-Z4 8mtx_mul_unit.sv
-Z5 Fmtx_mul_unit.sv
-!i122 9
+R1
+Z4 w1771821806
+Z5 8mtx_mul_unit.sv
+Z6 Fmtx_mul_unit.sv
+!i122 51
 L0 35 47
-Z6 VDg1SIo80bB@j0V0VzS_@n1
-Z7 OL;L;2021.3_1;73
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2021.3_1;73
 r1
 !s85 0
 31
-Z8 !s108 1772691584.000000
-!s107 /pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/uvm_macros.svh|tb_mtx_mul_unit.sv|tb_mtx_pkg.sv|mtx_mul_unit.sv|mtx_interface.sv|uvm_macros_include.sv|
-Z9 !s90 -reportprogress|300|-cover|sbcef|+acc|-sv|+incdir+/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src|uvm_macros_include.sv|mtx_interface.sv|mtx_mul_unit.sv|tb_mtx_pkg.sv|tb_mtx_mul_unit.sv|
+Z9 !s108 1772743180.000000
+Z10 !s107 /pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/uvm_macros.svh|tb_mtx_mul_unit.sv|tb_mtx_pkg.sv|mtx_mul_unit.sv|mtx_interface.sv|uvm_macros_include.sv|
+Z11 !s90 -reportprogress|300|-cover|sbcef|+acc|-sv|+incdir+/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src|uvm_macros_include.sv|mtx_interface.sv|mtx_mul_unit.sv|tb_mtx_pkg.sv|tb_mtx_mul_unit.sv|
 !i113 0
-Z10 !s102 -cover sbcef
-Z11 o-cover sbcef +acc -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z12 !s92 -cover sbcef +acc -sv +incdir+/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z13 tCvgOpt 0
+Z12 !s102 -cover sbcef
+Z13 o-cover sbcef +acc -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z14 !s92 -cover sbcef +acc -sv +incdir+/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z15 tCvgOpt 0
 vdff
-R1
 R2
+R3
 !i10b 1
 !s100 WDCP`_Fed]41K[0IbdJ0<3
 IZ1`UYY4KRAZKHgE_LT[Ud2
 S1
-R0
-R3
+R1
 R4
 R5
-!i122 9
-L0 9 10
 R6
+!i122 51
+L0 9 10
 R7
+R8
 r1
 !s85 0
 31
-R8
-Z14 !s107 /pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/uvm_macros.svh|tb_mtx_mul_unit.sv|tb_mtx_pkg.sv|mtx_mul_unit.sv|mtx_interface.sv|uvm_macros_include.sv|
 R9
-!i113 0
 R10
 R11
+!i113 0
 R12
 R13
+R14
+R15
 vfull_adder
-R1
 R2
+R3
 !i10b 1
 !s100 dWKnfkMUz<[2FLKLL@jJi2
 Ifz>;=3LXY;cLNJ;<Ho2U_0
 S1
-R0
-R3
+R1
 R4
 R5
-!i122 9
-L0 94 13
 R6
+!i122 51
+L0 94 13
 R7
+R8
 r1
 !s85 0
 31
-R8
-R14
 R9
-!i113 0
 R10
 R11
+!i113 0
 R12
 R13
+R14
+R15
 vfull_adder_g
-R1
 R2
+R3
 !i10b 1
 !s100 A:lT<G>fl>kBkNaj`;hJ21
 IR_JbAPbfJ_LEX;Qe78TWg3
 S1
-R0
-R3
+R1
 R4
 R5
-!i122 9
-L0 21 12
 R6
+!i122 51
+L0 21 12
 R7
+R8
 r1
 !s85 0
 31
-R8
-R14
 R9
-!i113 0
 R10
 R11
+!i113 0
 R12
 R13
+R14
+R15
 vmac_unit
-R1
 R2
+R3
 !i10b 1
 !s100 YXmMHhj<K4EgO?IFfU95f1
 IkVCf1hd>;VR=4jdRPCMng1
 S1
-R0
-R3
+R1
 R4
 R5
-!i122 9
-L0 219 44
 R6
+!i122 51
+L0 219 44
 R7
+R8
 r1
 !s85 0
 31
-R8
-R14
 R9
-!i113 0
 R10
 R11
+!i113 0
 R12
 R13
+R14
+R15
 Ymtx_if
-R1
 R2
+R3
 !i10b 1
 !s100 I2;[fmJ9<Wf[2==e7VBIY1
 I^Of;b?FlET32m>;W=hLRz0
 S1
-R0
+R1
 w1771983138
 8mtx_interface.sv
 Fmtx_interface.sv
-!i122 9
-L0 1 0
-R6
+!i122 51
+Z16 L0 1 0
 R7
+R8
 r1
 !s85 0
 31
-R8
-R14
 R9
-!i113 0
 R10
 R11
+!i113 0
 R12
 R13
+R14
+R15
 vmtx_mul_unit
-R1
 R2
+R3
 !i10b 1
 !s100 QTbgg^SgX6:gA5CJ0B<bj3
 ICbg1>VBgV:@zgWJg_Plc11
 S1
-R0
-R3
+R1
 R4
 R5
-!i122 9
-L0 274 57
 R6
+!i122 51
+L0 274 57
 R7
+R8
 r1
 !s85 0
 31
-R8
-R14
 R9
-!i113 0
 R10
 R11
+!i113 0
 R12
 R13
+R14
+R15
 vmul_unit
-R1
 R2
+R3
 !i10b 1
 !s100 bMzJ[;DZeFiQiET_N3Eal3
 I_4=FPNfB_;_Mdi4zY8i5z0
 S1
-R0
-R3
+R1
 R4
 R5
-!i122 9
-L0 109 99
 R6
+!i122 51
+L0 109 99
 R7
+R8
 r1
 !s85 0
 31
-R8
-R14
 R9
-!i113 0
 R10
 R11
+!i113 0
 R12
 R13
+R14
+R15
+vtb_mtx_mul_unit
+R2
+Z17 DXx6 mtiUvm 7 uvm_pkg 0 22 8V[`8]Q0W57le7Z>zYaAj1
+Z18 DXx4 work 10 tb_mtx_pkg 0 22 gQE41kMP6LGl1GJzAVNZA2
+DXx4 work 23 tb_mtx_mul_unit_sv_unit 0 22 5E?iob4j1gRFLYVJZDEHP0
+R3
+R7
+r1
+!s85 0
+!i10b 1
+!s100 LQn:<ZKO@Shi=]Uh87YYU0
+I`6^5BYSGRNh^LK0?h94Ig3
+!s105 tb_mtx_mul_unit_sv_unit
+S1
+R1
+Z19 w1772690635
+Z20 8tb_mtx_mul_unit.sv
+Z21 Ftb_mtx_mul_unit.sv
+!i122 51
+L0 4 36
+R8
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R14
+R15
+Xtb_mtx_mul_unit_sv_unit
+R2
+R17
+R18
+R3
+V5E?iob4j1gRFLYVJZDEHP0
+r1
+!s85 0
+!i10b 1
+!s100 SV_mX_6PD0GPffV@;^BbS1
+I5E?iob4j1gRFLYVJZDEHP0
+!i103 1
+S1
+R1
+R19
+R20
+R21
+!i122 51
+R16
+R8
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R14
+R15
+Xtb_mtx_pkg
+!s115 mtx_if
+R2
+R17
+R3
+!i10b 1
+!s100 n4TWO:jK^J8bO@8eZo;F>2
+IgQE41kMP6LGl1GJzAVNZA2
+S1
+R1
+w1772743169
+8tb_mtx_pkg.sv
+Ftb_mtx_pkg.sv
+F/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/uvm_macros.svh
+F/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
+F/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
+F/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh
+F/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh
+F/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh
+F/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh
+F/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh
+F/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh
+F/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh
+F/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh
+F/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
+!i122 51
+L0 2 0
+VgQE41kMP6LGl1GJzAVNZA2
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R14
+R15
+Ttb_uvm_opt
+!s11d tb_mtx_pkg /home/dboss/common/Documents/ECE593/ECE593/hw4/work 1 mtx_if 1 /home/dboss/common/Documents/ECE593/ECE593/hw4/work 
+!s110 1772743182
+V>TNJ=g3OlSP?B;gZW[=_Z2
+04 15 4 work tb_mtx_mul_unit fast 0
+!s124 OEM100
+o+acc
+R15
+ntb_uvm_opt
+OL;O;2021.3_1;73

@@ -32,7 +32,7 @@ vlog -cover sbcef +acc \
      mtx_mul_unit.sv \
      tb_mtx_pkg.sv \
      tb_mtx_mul_unit.sv
-vopt work.tb_mtx_mul_unit_uvm -o tb_uvm_opt +acc
+vopt work.tb_mtx_mul_unit -o tb_uvm_opt +acc
 vsim -coverage \
      -sv_seed random \
      +UVM_TESTNAME=mtx_full_test \
@@ -41,28 +41,29 @@ vsim -coverage \
 
 # Add signals to waveform viewer
 add wave -divider "Clock / Reset / Control"
-add wave -radix binary   sim:/tb_mtx_mul_unit_uvm/mif/clk
-add wave -radix binary   sim:/tb_mtx_mul_unit_uvm/mif/rst
-add wave -radix binary   sim:/tb_mtx_mul_unit_uvm/mif/start
-add wave -radix binary   sim:/tb_mtx_mul_unit_uvm/mif/done
+add wave -radix binary  sim:/tb_mtx_mul_unit/mif/clk
+add wave -radix binary  sim:/tb_mtx_mul_unit/mif/rst
+add wave -radix binary  sim:/tb_mtx_mul_unit/mif/start
+add wave -radix binary  sim:/tb_mtx_mul_unit/mif/done
 
-add wave -divider "Matrix A (row0)"
-add wave -radix hex      sim:/tb_mtx_mul_unit_uvm/mif/A[0][0]
-add wave -radix hex      sim:/tb_mtx_mul_unit_uvm/mif/A[0][1]
-add wave -radix hex      sim:/tb_mtx_mul_unit_uvm/mif/A[0][2]
+add wave -divider "Matrix A (row 0)"
+add wave -radix hex     sim:/tb_mtx_mul_unit/mif/A[0][0]
+add wave -radix hex     sim:/tb_mtx_mul_unit/mif/A[0][1]
+add wave -radix hex     sim:/tb_mtx_mul_unit/mif/A[0][2]
 
-add wave -divider "Matrix B (col0)"
-add wave -radix hex      sim:/tb_mtx_mul_unit_uvm/mif/B[0][0]
-add wave -radix hex      sim:/tb_mtx_mul_unit_uvm/mif/B[1][0]
-add wave -radix hex      sim:/tb_mtx_mul_unit_uvm/mif/B[2][0]
+add wave -divider "Matrix B (col 0)"
+add wave -radix hex     sim:/tb_mtx_mul_unit/mif/B[0][0]
+add wave -radix hex     sim:/tb_mtx_mul_unit/mif/B[1][0]
+add wave -radix hex     sim:/tb_mtx_mul_unit/mif/B[2][0]
 
-add wave -divider "Matrix C (row0) – valid 3 cycles after done"
-add wave -radix hex      sim:/tb_mtx_mul_unit_uvm/mif/C[0][0]
-add wave -radix hex      sim:/tb_mtx_mul_unit_uvm/mif/C[0][1]
-add wave -radix hex      sim:/tb_mtx_mul_unit_uvm/mif/C[0][2]
+add wave -divider "Matrix C (row 0) -- valid 3 cycles after done"
+add wave -radix hex     sim:/tb_mtx_mul_unit/mif/C[0][0]
+add wave -radix hex     sim:/tb_mtx_mul_unit/mif/C[0][1]
+add wave -radix hex     sim:/tb_mtx_mul_unit/mif/C[0][2]
 
 run -all
 
 # ---- Coverage report --------------------------------------------------------
-coverage report -detail -cvg -directive -comments -output coverage_report.txt
-quit -sim
+coverage report -detail -cvg -directive -comments -output functional_coverage.txt
+coverage report -instance=/tb_mtx_mul_unit/* -output DUT_code_coverage.txt
+pause

@@ -1,0 +1,24 @@
+Coverage Report Summary Data by instance
+
+=================================================================================
+=== Instance: /tb_mtx_mul_unit/mif
+=== Design Unit: work.mtx_if
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      10        10         0   100.00%
+
+=================================================================================
+=== Instance: /tb_mtx_mul_unit/DUT
+=== Design Unit: work.mtx_mul_unit
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         6         6         0   100.00%
+    Conditions                       1         1         0   100.00%
+    Expressions                     18        18         0   100.00%
+    Statements                      10        10         0   100.00%
+
+
+Total Coverage By Instance (filtered view): 100.00%
+
