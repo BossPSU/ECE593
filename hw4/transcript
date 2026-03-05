@@ -1,0 +1,158 @@
+# //  Questa Sim-64
+# //  Version 2021.3_1 linux_x86_64 Aug 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 21:26:11 on Mar 04,2026
+# vlog -reportprogress 300 -cover sbcef "+acc" -sv mtx_interface.sv mtx_mul_unit.sv tb_mtx_pkg.sv tb_mtx_mul_unit.sv 
+# -- Compiling interface mtx_if
+# -- Compiling module dff
+# -- Compiling module full_adder_g
+# -- Compiling module acc_unit
+# -- Compiling module full_adder
+# -- Compiling module mul_unit
+# -- Compiling module mac_unit
+# -- Compiling module mtx_mul_unit
+# ** Warning: mtx_mul_unit.sv(281): (vlog-13314) Defaulting port 'A' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: mtx_mul_unit.sv(282): (vlog-13314) Defaulting port 'B' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Compiling package tb_mtx_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) tb_mtx_pkg.sv(7): Using implicit +incdir+/pkgs/mentor/questa/2021.3_1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
+# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
+# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
+# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
+# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
+# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
+# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
+# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
+# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
+# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
+# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
+# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
+# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
+# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
+# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
+# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
+# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
+# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
+# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
+# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
+# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
+# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
+# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
+# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
+# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
+# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
+# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
+# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(18)
+# ** at tb_mtx_pkg.sv(18): (vlog-2730) Undefined variable: 'mode'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(18)
+# ** at tb_mtx_pkg.sv(18): (vlog-2730) Undefined variable: 'mode'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(18)
+# ** at tb_mtx_pkg.sv(18): (vlog-2730) Undefined variable: 'mode'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(18)
+# ** at tb_mtx_pkg.sv(18): (vlog-2730) Undefined variable: 'mode'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(18)
+# ** at tb_mtx_pkg.sv(18): (vlog-2730) Undefined variable: 'mode'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(19)
+# ** at tb_mtx_pkg.sv(19): (vlog-2730) Undefined variable: 'txn_id'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(19)
+# ** at tb_mtx_pkg.sv(19): (vlog-2730) Undefined variable: 'txn_id'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(19)
+# ** at tb_mtx_pkg.sv(19): (vlog-2730) Undefined variable: 'txn_id'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(19)
+# ** at tb_mtx_pkg.sv(19): (vlog-2730) Undefined variable: 'txn_id'.
+# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(19)
+# ** at tb_mtx_pkg.sv(19): (vlog-2730) Undefined variable: 'txn_id'.
+# ** Error: tb_mtx_pkg.sv(20): (vlog-2163) Macro `uvm_objects_utils_end is undefined.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(23): near "rand": syntax error, unexpected rand.
+# ** Error: tb_mtx_pkg.sv(31): Illegal declaration after the statement near line '24'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: tb_mtx_pkg.sv(51): (vlog-2730) Undefined variable: 'B'.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(51): near "==": syntax error, unexpected ==.
+# ** Error: tb_mtx_pkg.sv(58): (vlog-2730) Undefined variable: 'B'.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(58): near "==": syntax error, unexpected ==.
+# ** Error: tb_mtx_pkg.sv(63): 'super.new()' call can be made only from within a class constructor.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(66): near "endfunction": syntax error, unexpected endfunction.
+# ** Error: tb_mtx_pkg.sv(70): Illegal declaration after the statement near line '68'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(77): near "endfunction": syntax error, unexpected endfunction.
+# ** Error: ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
+# ** at tb_mtx_pkg.sv(81): (vlog-2730) Undefined variable: 'mtx_base_seq'.
+# ** Warning: ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
+# ** at tb_mtx_pkg.sv(81): (vlog-2953) Incorrect usage of keyword 'static'.
+# ** Error: (vlog-13069) ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
+# ** at tb_mtx_pkg.sv(81): near "function": syntax error, unexpected function, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: (vlog-13069) ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
+# ** at tb_mtx_pkg.sv(81): near "endfunction": syntax error, unexpected endfunction.
+# ** Error: (vlog-13069) ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
+# ** at tb_mtx_pkg.sv(81): near ";": syntax error, unexpected ';', expecting '('.
+# ** Error: ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
+# ** at tb_mtx_pkg.sv(81): (vlog-2730) Undefined variable: 'tmp'.
+# ** Error: ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
+# ** at tb_mtx_pkg.sv(81): (vlog-2730) Undefined variable: 'name'.
+# ** Error: (vlog-13069) ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
+# ** at tb_mtx_pkg.sv(81): near "endfunction": syntax error, unexpected endfunction.
+# ** Error: (vlog-13069) ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
+# ** at tb_mtx_pkg.sv(81): near "endfunction": syntax error, unexpected endfunction.
+# ** Error: (vlog-13069) ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
+# ** at tb_mtx_pkg.sv(81): near ";": syntax error, unexpected ';', expecting '('.
+# ** Error: ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
+# ** at tb_mtx_pkg.sv(81): Illegal declaration after the statement near line '81'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: (vlog-13069) ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
+# ** at tb_mtx_pkg.sv(81): near "end": syntax error, unexpected end.
+# ** Error: tb_mtx_pkg.sv(84): 'super.new()' call can be made only from within a class constructor.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(99): near "mtx_base_seq": syntax error, unexpected IDENTIFIER.
+# ** Error: tb_mtx_pkg.sv(99): Error in class extension specification.
+# -- Compiling module tb_mtx_mul_unit
+# ** Error: tb_mtx_mul_unit.sv(108): Illegal use of 'automatic' for variable declaration (clk).
+# ** Error: tb_mtx_pkg.sv(99): End of source encountered before closing `ifdef region started at tb_mtx_pkg.sv(1).
+# End time: 21:26:12 on Mar 04,2026, Elapsed time: 0:00:01
+# Errors: 64, Warnings: 3
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 17
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -cover sbcef +acc \
+#      -sv \
+#      mtx_interface.sv \
+#      mtx_mul_unit.sv \
+#      tb_mtx_pkg.sv \
+#      tb_mtx_mul_unit.sv"
