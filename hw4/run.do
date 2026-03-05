@@ -9,8 +9,25 @@
 # Or override from command line:
 #   vsim -do run_uvm.do +UVM_TESTNAME=mtx_corner_test
 # =============================================================================
+set uvm_src "/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src"
+
+if {![file exists "$uvm_src/uvm_macros.svh"]} {
+    set questa_root [file normalize "[file dirname [info nameofexecutable]]/.."]
+    foreach d [list \
+        "$questa_root/verilog_src/uvm-1.1d/src" \
+        "$questa_root/questa_sim/uvm-1.1d/src" \
+        "$questa_root/uvm-1.1d/src" \
+    ] {
+        if {[file exists "$d/uvm_macros.svh"]} { set uvm_src $d; break }
+    }
+}
+echo "UVM source: $uvm_src"
+
+###
 vlog -cover sbcef +acc \
      -sv \
+     +incdir+$uvm_src \
+     uvm_macros_include.sv \
      mtx_interface.sv \
      mtx_mul_unit.sv \
      tb_mtx_pkg.sv \

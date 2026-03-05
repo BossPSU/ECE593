@@ -1,23 +1,11 @@
-`ifndef tb_mtx_pkg
-`define tb_mtx_pkg
-
 package tb_mtx_pkg;
 
 	import uvm_pkg::*;
-	`include "uvm_macros.svh"
 	
 	localparam int WIDTH = 8;
 	localparam int N = 3;
 	
 	class mtx_seq_item #(int WIDTH=8, int N=3) extends uvm_sequence_item;
-		
-		`uvm_object_utils_begin(mtx_seq_item)
-			`uvm_field_sarray_int(A, UVM_ALL_ON)
-			`uvm_field_sarray_int(B, UVM_ALL_ON)
-			`uvm_field_sarray_int(C, UVM_ALL_ON)
-			`uvm_field_int(mode,   UVM_ALL_ON)
-			`uvm_field_int(txn_id,   UVM_ALL_ON)
-		`uvm_objects_utils_end
 		
 		//inputs	
 		rand logic [WIDTH-1:0] A [N-1:0][N-1:0];
@@ -27,6 +15,17 @@ package tb_mtx_pkg;
 		
 		int unsigned mode;
 		int unsigned txn_id;
+		
+		typedef uvm_object_registry #(mtx_seq_item, "mtx_seq_item") type_id;
+        	static function type_id get_type(); return type_id::get(); endfunction
+       		virtual function uvm_object_wrapper get_object_type();
+            		return type_id::get();
+        	endfunction
+        	virtual function uvm_object create(string name="");
+            		mtx_seq_item t = new(name); return t;
+        	endfunction
+        	static function string type_name(); return "mtx_seq_item"; endfunction
+        	virtual function string get_type_name(); return "mtx_seq_item"; endfunction
 		
 		constraint zero_a {
 			(mode == 1) -> { foreach(A[i,j]) A[i][j] == 8'h00; }
@@ -78,11 +77,14 @@ package tb_mtx_pkg;
 	endclass
 	
 	class mtx_base_seq extends uvm_sequence #(mtx_seq_item);
-		`uvm_object_utils(mtx_base_seq)
-		
-		function new(string name = "mtx_base_seq");
-			super.new(name);
-		endfunction
+	
+		typedef uvm_object_registry #(mtx_base_seq,"mtx_base_seq") type_id;
+        	static function type_id get_type(); return type_id::get(); endfunction
+        	virtual function uvm_object_wrapper get_object_type(); return type_id::get(); endfunction
+        	virtual function uvm_object create(string name=""); mtx_base_seq t=new(name); return t; endfunction
+        	virtual function string get_type_name(); return "mtx_base_seq"; endfunction
+
+        	function new(string name = "mtx_base_seq"); super.new(name); endfunction
 		
 		task send_item(int unsigned m, int unsigned id);
 			mtx_seq_item item;
@@ -97,11 +99,13 @@ package tb_mtx_pkg;
 	endclass
 	
 	class mtx_corner_seq extends mtx_base_seq;
-		`uvm_object_utils(mtx_corner_seq)
 		
-		function new(string name = "mtx_corner_seq");
-			super.new(name);
-		endfunction
+		typedef uvm_object_registry #(mtx_corner_seq,"mtx_corner_seq") type_id;
+        	static function type_id get_type(); return type_id::get(); endfunction
+        	virtual function uvm_object_wrapper get_object_type(); return type_id::get(); endfunction
+        	virtual function uvm_object create(string name=""); mtx_corner_seq t=new(name); return t; endfunction
+        	virtual function string get_type_name(); return "mtx_corner_seq"; endfunction
+        	function new(string name="mtx_corner_seq"); super.new(name); endfunction
 		
 		task body();
 			for (int m =1; m <= 5; m++)
@@ -110,7 +114,12 @@ package tb_mtx_pkg;
 	endclass
 	
 	class mtx_rand_seq extends mtx_base_seq;
-		`uvm_object_utils(mtx_rand_seq)
+	
+		typedef uvm_object_registry #(mtx_rand_seq,"mtx_rand_seq") type_id;
+        	static function type_id get_type(); return type_id::get(); endfunction
+        	virtual function uvm_object_wrapper get_object_type(); return type_id::get(); endfunction
+        	virtual function uvm_object create(string name=""); mtx_rand_seq t=new(name); return t; endfunction
+        	virtual function string get_type_name(); return "mtx_rand_seq"; endfunction
 		
 		int unsigned num_txns = 1000;
 		
@@ -125,7 +134,12 @@ package tb_mtx_pkg;
 	endclass
 	
 	class mtx_full_seq extends uvm_sequence #(mtx_seq_item);
-		`uvm_object_utils_mtx_full_seq)
+	
+		typedef uvm_object_registry #(mtx_full_seq,"mtx_full_seq") type_id;
+        	static function type_id get_type(); return type_id::get(); endfunction
+        	virtual function uvm_object_wrapper get_object_type(); return type_id::get(); endfunction
+        	virtual function uvm_object create(string name=""); mtx_full_seq t=new(name); return t; endfunction
+        	virtual function string get_type_name(); return "mtx_full_seq"; endfunction
 		
 		int unsigned num_rand = 1000;
 		
@@ -147,7 +161,14 @@ package tb_mtx_pkg;
 	endclass
 	
 	class mtx_driver extends uvm_driver #(mtx_seq_item);
-		`uvm_component_utils(mtx_driver)
+	
+		typedef uvm_component_registry #(mtx_driver,"mtx_driver") type_id;
+        	static function type_id get_type(); return type_id::get(); endfunction
+        	virtual function uvm_object_wrapper get_object_type(); return type_id::get(); endfunction
+        	virtual function uvm_component create_component(string name, uvm_component parent);
+            		return new(name,parent);
+        	endfunction
+        	virtual function string get_type_name(); return "mtx_driver"; endfunction
 	
 		virtual mtx_if #(WIDTH,N) vif;
 		
@@ -201,7 +222,14 @@ package tb_mtx_pkg;
 	endclass
 	
 	class monitor extends uvm_monitor;
-		`uvm_component_utils(mtx_monitor)
+	
+		typedef uvm_component_registry #(mtx_monitor,"mtx_monitor") type_id;
+        	static function type_id get_type(); return type_id::get(); endfunction
+        	virtual function uvm_object_wrapper get_object_type(); return type_id::get(); endfunction
+        	virtual function uvm_component create_component(string name, uvm_component parent);
+            		return new(name,parent);
+        	endfunction
+        	virtual function string get_type_name(); return "mtx_monitor"; endfunction
 		
 		virtual mtx_if #(WIDTH,N) vif;
     		uvm_analysis_port #(mtx_seq_item) ap;
@@ -261,7 +289,15 @@ package tb_mtx_pkg;
 	endclass
 	
 	class mtx_scoreboard extends uvm_scoreboard;
-		uvm_component_utils(mtx_scoreboard)
+	
+		typedef uvm_component_registry #(mtx_scoreboard,"mtx_scoreboard") type_id;
+        	static function type_id get_type(); return type_id::get(); endfunction
+        	virtual function uvm_object_wrapper get_object_type(); return type_id::get(); endfunction
+        	virtual function uvm_component create_component(string name, uvm_component parent);
+            		return new(name,parent);
+        	endfunction
+        	virtual function string get_type_name(); return "mtx_scoreboard"; endfunction
+		
 		localparam int ACC_BITS = 2*WIDTH;
 		
 		uvm_analysis_imp #(mtx_seq_item, mtx_scoreboard) analysis_imp;
@@ -336,7 +372,14 @@ package tb_mtx_pkg;
         endclass
           
 	class mtx_coverage extends uvm_subscriber (#mtx_seq_item);
-		`uvm_component_utils(mtx_coverage)
+	
+		typedef uvm_component_registry #(mtx_coverage,"mtx_coverage") type_id;
+        	static function type_id get_type(); return type_id::get(); endfunction
+        	virtual function uvm_object_wrapper get_object_type(); return type_id::get(); endfunction
+        	virtual function uvm_component create_component(string name, uvm_component parent);
+            		return new(name,parent);
+        	endfunction
+        	virtual function string get_type_name(); return "mtx_coverage"; endfunction
           	
           	mtx_seq_item tr;
           	
@@ -395,7 +438,14 @@ package tb_mtx_pkg;
 	endclass 
         
         class mtx_agent extends uvm_agent;
-        	`uvm_component_utils(mtx_agent)
+        
+        	typedef uvm_component_registry #(mtx_agent,"mtx_agent") type_id;
+        	static function type_id get_type(); return type_id::get(); endfunction
+        	virtual function uvm_object_wrapper get_object_type(); return type_id::get(); endfunction
+        	virtual function uvm_component create_component(string name, uvm_component parent);
+            		return new(name,parent);
+        	endfunction
+       		virtual function string get_type_name(); return "mtx_agent"; endfunction
 
         	mtx_driver                  drv;
         	mtx_monitor                 mon;
@@ -422,7 +472,14 @@ package tb_mtx_pkg;
     	endclass 
           
         class mtx_environment extends uvm_env;
-        	`uvm_component_utils(mtx_env)
+        
+        	typedef uvm_component_registry #(mtx_env,"mtx_env") type_id;
+        	static function type_id get_type(); return type_id::get(); endfunction
+        	virtual function uvm_object_wrapper get_object_type(); return type_id::get(); endfunction
+        	virtual function uvm_component create_component(string name, uvm_component parent);
+            		return new(name,parent);
+        	endfunction
+        	virtual function string get_type_name(); return "mtx_env"; endfunction
           	
           	mtx_agent       agent;
         	mtx_scoreboard  scb;
@@ -446,7 +503,14 @@ package tb_mtx_pkg;
     	endclass
 
   	class mtx_base_test extends uvm_test;
-  		`uvm_component_utils(mtx_base_test)
+  	
+  		typedef uvm_component_registry #(mtx_base_test,"mtx_base_test") type_id;
+        	static function type_id get_type(); return type_id::get(); endfunction
+        	virtual function uvm_object_wrapper get_object_type(); return type_id::get(); endfunction
+        	virtual function uvm_component create_component(string name, uvm_component parent);
+            		return new(name,parent);
+        	endfunction
+        	virtual function string get_type_name(); return "mtx_base_test"; endfunction
   		
   		mtx_env env;
   		
@@ -480,7 +544,14 @@ package tb_mtx_pkg;
     	endclass
 	
 	 class mtx_corner_test extends mtx_base_test;
-        	`uvm_component_utils(mtx_corner_test)
+	 
+        	typedef uvm_component_registry #(mtx_full_test,"mtx_full_test") type_id;
+        	static function type_id get_type(); return type_id::get(); endfunction
+        	virtual function uvm_object_wrapper get_object_type(); return type_id::get(); endfunction
+        	virtual function uvm_component create_component(string name, uvm_component parent);
+            		return new(name,parent);
+        	endfunction
+        	virtual function string get_type_name(); return "mtx_full_test"; endfunction
 
         	function new(string name, uvm_component parent);
             		super.new(name, parent);
@@ -497,4 +568,4 @@ package tb_mtx_pkg;
     	endclass 
 endpackage 
 
-`endif // UVM_MTX_PKG_SV		
+	

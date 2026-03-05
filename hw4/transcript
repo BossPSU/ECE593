@@ -13,9 +13,11 @@
 # //  18 U.S.C. Section 1905.
 # //
 # do run.do
+# /pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src
+# UVM source: /pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src
 # QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
-# Start time: 21:26:11 on Mar 04,2026
-# vlog -reportprogress 300 -cover sbcef "+acc" -sv mtx_interface.sv mtx_mul_unit.sv tb_mtx_pkg.sv tb_mtx_mul_unit.sv 
+# Start time: 22:19:44 on Mar 04,2026
+# vlog -reportprogress 300 -cover sbcef "+acc" -sv "+incdir+/pkgs/mentor/questa/2021.3_1/questasim/verilog_src/uvm-1.1d/src" uvm_macros_include.sv mtx_interface.sv mtx_mul_unit.sv tb_mtx_pkg.sv tb_mtx_mul_unit.sv 
 # -- Compiling interface mtx_if
 # -- Compiling module dff
 # -- Compiling module full_adder_g
@@ -28,131 +30,127 @@
 # ** Warning: mtx_mul_unit.sv(282): (vlog-13314) Defaulting port 'B' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # -- Compiling package tb_mtx_pkg
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
-# ** Note: (vlog-2286) tb_mtx_pkg.sv(7): Using implicit +incdir+/pkgs/mentor/questa/2021.3_1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
-# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
-# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
-# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
-# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
-# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
-# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
-# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
-# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(15)
-# ** at tb_mtx_pkg.sv(15): (vlog-2730) Undefined variable: 'A'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
-# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
-# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
-# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
-# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
-# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
-# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
-# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
-# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(16)
-# ** at tb_mtx_pkg.sv(16): (vlog-2730) Undefined variable: 'B'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
-# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
-# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
-# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
-# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
-# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
-# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
-# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
-# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_sarray_int' starting at tb_mtx_pkg.sv(17)
-# ** at tb_mtx_pkg.sv(17): (vlog-2730) Undefined variable: 'C'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(18)
-# ** at tb_mtx_pkg.sv(18): (vlog-2730) Undefined variable: 'mode'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(18)
-# ** at tb_mtx_pkg.sv(18): (vlog-2730) Undefined variable: 'mode'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(18)
-# ** at tb_mtx_pkg.sv(18): (vlog-2730) Undefined variable: 'mode'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(18)
-# ** at tb_mtx_pkg.sv(18): (vlog-2730) Undefined variable: 'mode'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(18)
-# ** at tb_mtx_pkg.sv(18): (vlog-2730) Undefined variable: 'mode'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(19)
-# ** at tb_mtx_pkg.sv(19): (vlog-2730) Undefined variable: 'txn_id'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(19)
-# ** at tb_mtx_pkg.sv(19): (vlog-2730) Undefined variable: 'txn_id'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(19)
-# ** at tb_mtx_pkg.sv(19): (vlog-2730) Undefined variable: 'txn_id'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(19)
-# ** at tb_mtx_pkg.sv(19): (vlog-2730) Undefined variable: 'txn_id'.
-# ** Error: ** while parsing macro expansion: 'uvm_field_int' starting at tb_mtx_pkg.sv(19)
-# ** at tb_mtx_pkg.sv(19): (vlog-2730) Undefined variable: 'txn_id'.
-# ** Error: tb_mtx_pkg.sv(20): (vlog-2163) Macro `uvm_objects_utils_end is undefined.
-# ** Error: (vlog-13069) tb_mtx_pkg.sv(23): near "rand": syntax error, unexpected rand.
-# ** Error: tb_mtx_pkg.sv(31): Illegal declaration after the statement near line '24'.  Declarations must precede statements.  Look for stray semicolons.
-# ** Error: tb_mtx_pkg.sv(51): (vlog-2730) Undefined variable: 'B'.
-# ** Error: (vlog-13069) tb_mtx_pkg.sv(51): near "==": syntax error, unexpected ==.
-# ** Error: tb_mtx_pkg.sv(58): (vlog-2730) Undefined variable: 'B'.
-# ** Error: (vlog-13069) tb_mtx_pkg.sv(58): near "==": syntax error, unexpected ==.
-# ** Error: tb_mtx_pkg.sv(63): 'super.new()' call can be made only from within a class constructor.
-# ** Error: (vlog-13069) tb_mtx_pkg.sv(66): near "endfunction": syntax error, unexpected endfunction.
-# ** Error: tb_mtx_pkg.sv(70): Illegal declaration after the statement near line '68'.  Declarations must precede statements.  Look for stray semicolons.
-# ** Error: (vlog-13069) tb_mtx_pkg.sv(77): near "endfunction": syntax error, unexpected endfunction.
-# ** Error: ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
-# ** at tb_mtx_pkg.sv(81): (vlog-2730) Undefined variable: 'mtx_base_seq'.
-# ** Warning: ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
-# ** at tb_mtx_pkg.sv(81): (vlog-2953) Incorrect usage of keyword 'static'.
-# ** Error: (vlog-13069) ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
-# ** at tb_mtx_pkg.sv(81): near "function": syntax error, unexpected function, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
-# ** Error: (vlog-13069) ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
-# ** at tb_mtx_pkg.sv(81): near "endfunction": syntax error, unexpected endfunction.
-# ** Error: (vlog-13069) ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
-# ** at tb_mtx_pkg.sv(81): near ";": syntax error, unexpected ';', expecting '('.
-# ** Error: ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
-# ** at tb_mtx_pkg.sv(81): (vlog-2730) Undefined variable: 'tmp'.
-# ** Error: ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
-# ** at tb_mtx_pkg.sv(81): (vlog-2730) Undefined variable: 'name'.
-# ** Error: (vlog-13069) ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
-# ** at tb_mtx_pkg.sv(81): near "endfunction": syntax error, unexpected endfunction.
-# ** Error: (vlog-13069) ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
-# ** at tb_mtx_pkg.sv(81): near "endfunction": syntax error, unexpected endfunction.
-# ** Error: (vlog-13069) ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
-# ** at tb_mtx_pkg.sv(81): near ";": syntax error, unexpected ';', expecting '('.
-# ** Error: ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
-# ** at tb_mtx_pkg.sv(81): Illegal declaration after the statement near line '81'.  Declarations must precede statements.  Look for stray semicolons.
-# ** Error: (vlog-13069) ** while parsing macro expansion: 'uvm_object_utils' starting at tb_mtx_pkg.sv(81)
-# ** at tb_mtx_pkg.sv(81): near "end": syntax error, unexpected end.
-# ** Error: tb_mtx_pkg.sv(84): 'super.new()' call can be made only from within a class constructor.
-# ** Error: (vlog-13069) tb_mtx_pkg.sv(99): near "mtx_base_seq": syntax error, unexpected IDENTIFIER.
-# ** Error: tb_mtx_pkg.sv(99): Error in class extension specification.
-# -- Compiling module tb_mtx_mul_unit
-# ** Error: tb_mtx_mul_unit.sv(108): Illegal use of 'automatic' for variable declaration (clk).
-# ** Error: tb_mtx_pkg.sv(99): End of source encountered before closing `ifdef region started at tb_mtx_pkg.sv(1).
-# End time: 21:26:12 on Mar 04,2026, Elapsed time: 0:00:01
-# Errors: 64, Warnings: 3
+# ** Error (suppressible): tb_mtx_pkg.sv(91): (vlog-2745) Expected #() syntax as parameterized class prefix to '::' near "type_id".
+# ** Error: tb_mtx_pkg.sv(96): (vlog-2163) Macro `uvm_fatal is undefined.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(96): near "(": syntax error, unexpected '('.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(169): near "new": syntax error, unexpected "SystemVerilog keyword 'new'".
+# ** Error: tb_mtx_pkg.sv(182): (vlog-2163) Macro `uvm_fatal is undefined.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(182): near "(": syntax error, unexpected '('.
+# ** Error: tb_mtx_pkg.sv(193): (vlog-2163) Macro `uvm_info is undefined.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(193): near "(": syntax error, unexpected '('.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(210): near "endtask": syntax error, unexpected endtask, expecting endfunction.
+# ** Error: tb_mtx_pkg.sv(214): Illegal declaration after the statement near line '212'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: tb_mtx_pkg.sv(217): (vlog-2163) Macro `uvm_info is undefined.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(217): near "(": syntax error, unexpected '('.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(221): near "endtask": syntax error, unexpected endtask, expecting endfunction.
+# ** Error: tb_mtx_pkg.sv(226): (vlog-2730) Undefined variable: 'mtx_monitor'.
+# ** Warning: tb_mtx_pkg.sv(227): (vlog-2953) Incorrect usage of keyword 'static'.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(228): near "function": syntax error, unexpected function, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: tb_mtx_pkg.sv(229): 'create_component' already exists; must not be redefined as a function.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(230): near "new": syntax error, unexpected "SystemVerilog keyword 'new'".
+# ** Error: tb_mtx_pkg.sv(232): 'get_type_name' already exists; must not be redefined as a function.
+# ** Error (suppressible): tb_mtx_pkg.sv(234): (vlog-2388) 'vif' already declared in this scope (mtx_driver) at tb_mtx_pkg.sv(173).
+# ** Error: tb_mtx_pkg.sv(234): (vlog-13311) 'vif' already declared in this scope ('mtx_driver') with a type.
+# ** Error: tb_mtx_pkg.sv(237): Multiple constructors declared for class mtx_driver - only one allowed.
+# ** Error (suppressible): tb_mtx_pkg.sv(237): (vlog-2388) 'name' already declared in this scope (new) at tb_mtx_pkg.sv(175).
+# ** Error (suppressible): tb_mtx_pkg.sv(237): (vlog-2388) 'parent' already declared in this scope (new) at tb_mtx_pkg.sv(175).
+# ** Error: tb_mtx_pkg.sv(238): 'super.new()' call must be the first executable statement in the class constructor.
+# ** Error: tb_mtx_pkg.sv(241): 'build_phase' already exists; must not be redefined as a function.
+# ** Error: tb_mtx_pkg.sv(245): (vlog-2163) Macro `uvm_fatal is undefined.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(245): near "(": syntax error, unexpected '('.
+# ** Error (suppressible): tb_mtx_pkg.sv(250): (vlog-2244) Variable 'prev_start' is implicitly static. You must either explicitly declare it as static or automatic
+# or remove the initialization in the declaration of variable.
+# ** Error (suppressible): tb_mtx_pkg.sv(251): (vlog-2244) Variable 'prev_done' is implicitly static. You must either explicitly declare it as static or automatic
+# or remove the initialization in the declaration of variable.
+# ** Error: tb_mtx_pkg.sv(253): Illegal declaration after the statement near line '244'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error (suppressible): tb_mtx_pkg.sv(257): (vlog-2745) Expected #() syntax as parameterized class prefix to '::' near "type_id".
+# ** Error: tb_mtx_pkg.sv(261): (vlog-2163) Macro `uvm_info is undefined.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(261): near "(": syntax error, unexpected '('.
+# ** Error: tb_mtx_pkg.sv(270): (vlog-2730) Undefined variable: 'tr_out'.
+# ** Error: tb_mtx_pkg.sv(274): (vlog-2730) Undefined variable: 'p'.
+# ** Error: tb_mtx_pkg.sv(276): (vlog-2163) Macro `uvm_info is undefined.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(276): near "(": syntax error, unexpected '('.
+# ** Error: tb_mtx_pkg.sv(279): (vlog-2163) Macro `uvm_warning is undefined.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(288): near "endtask": syntax error, unexpected endtask.
+# ** Error: tb_mtx_pkg.sv(293): (vlog-2730) Undefined variable: 'mtx_scoreboard'.
+# ** Warning: tb_mtx_pkg.sv(294): (vlog-2953) Incorrect usage of keyword 'static'.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(295): near "function": syntax error, unexpected function, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(295): near "endfunction": syntax error, unexpected endfunction.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(299): near "endfunction": syntax error, unexpected endfunction.
+# ** Error (suppressible): tb_mtx_pkg.sv(305): (vlog-2244) Variable 'num_checked' is implicitly static. You must either explicitly declare it as static or automatic
+# or remove the initialization in the declaration of variable.
+# ** Error (suppressible): tb_mtx_pkg.sv(306): (vlog-2244) Variable 'pass_cnt' is implicitly static. You must either explicitly declare it as static or automatic
+# or remove the initialization in the declaration of variable.
+# ** Error (suppressible): tb_mtx_pkg.sv(307): (vlog-2244) Variable 'fail_cnt' is implicitly static. You must either explicitly declare it as static or automatic
+# or remove the initialization in the declaration of variable.
+# ** Error: tb_mtx_pkg.sv(309): Illegal declaration after the statement near line '301'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: tb_mtx_pkg.sv(310): 'super.new()' call can be made only from within a class constructor.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(311): near "endfunction": syntax error, unexpected endfunction.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(316): near "endfunction": syntax error, unexpected endfunction.
+# ** Error: tb_mtx_pkg.sv(322): (vlog-2730) Undefined variable: 'ACC_BITS'.
+# ** Error (suppressible): tb_mtx_pkg.sv(322): (vlog-2244) Variable 'acc' is implicitly static. You must either explicitly declare it as static or automatic
+# or remove the initialization in the declaration of variable.
+# ** Error: tb_mtx_pkg.sv(324): Illegal declaration after the statement near line '321'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: tb_mtx_pkg.sv(327): (vlog-2730) Undefined variable: 'a_row'.
+# ** Error: tb_mtx_pkg.sv(327): (vlog-2730) Undefined variable: 'b_col'.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(331): near "endfunction": syntax error, unexpected endfunction.
+# ** Error (suppressible): tb_mtx_pkg.sv(337): (vlog-2244) Variable 'pass' is implicitly static. You must either explicitly declare it as static or automatic
+# or remove the initialization in the declaration of variable.
+# ** Error: tb_mtx_pkg.sv(339): Illegal declaration after the statement near line '333'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: tb_mtx_pkg.sv(339): (vlog-2730) Undefined variable: 'i'.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(339): near ")": syntax error, unexpected ')', expecting ';'.
+# ** Error: tb_mtx_pkg.sv(340): (vlog-2730) Undefined variable: 'j'.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(340): near ")": syntax error, unexpected ')', expecting ';'.
+# ** Error: tb_mtx_pkg.sv(341): (vlog-2730) Undefined variable: 'k'.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(341): near ")": syntax error, unexpected ')', expecting ';'.
+# ** Error: tb_mtx_pkg.sv(345): (vlog-2730) Undefined variable: 'i'.
+# ** Error: tb_mtx_pkg.sv(345): (vlog-2730) Undefined variable: 'j'.
+# ** Error: tb_mtx_pkg.sv(345): (vlog-2730) Undefined variable: 'exp_c'.
+# ** Error: tb_mtx_pkg.sv(347): (vlog-2163) Macro `uvm_error is undefined.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(347): near "(": syntax error, unexpected '('.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(351): near "end": syntax error, unexpected end.
+# ** Error: tb_mtx_pkg.sv(355): (vlog-2730) Undefined variable: 'num_checked'.
+# ** Error: tb_mtx_pkg.sv(357): (vlog-2163) Macro `uvm_info is undefined.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(357): near "(": syntax error, unexpected '('.
+# ** Error: tb_mtx_pkg.sv(361): (vlog-2163) Macro `uvm_info is undefined.
+# ** Error: tb_mtx_pkg.sv(370): (vlog-2163) Macro `uvm_error is undefined.
+# ** Error: tb_mtx_pkg.sv(376): (vlog-2730) Undefined variable: 'mtx_coverage'.
+# ** Warning: tb_mtx_pkg.sv(377): (vlog-2953) Incorrect usage of keyword 'static'.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(378): near "function": syntax error, unexpected function, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: tb_mtx_pkg.sv(379): 'create_component' already exists; must not be redefined as a function.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(380): near "new": syntax error, unexpected "SystemVerilog keyword 'new'".
+# ** Error: tb_mtx_pkg.sv(382): 'get_type_name' already exists; must not be redefined as a function.
+# ** Error: tb_mtx_pkg.sv(413): Multiple constructors declared for class mtx_driver - only one allowed.
+# ** Error (suppressible): tb_mtx_pkg.sv(413): (vlog-2388) 'name' already declared in this scope (new) at tb_mtx_pkg.sv(175).
+# ** Error (suppressible): tb_mtx_pkg.sv(413): (vlog-2388) 'parent' already declared in this scope (new) at tb_mtx_pkg.sv(175).
+# ** Error: tb_mtx_pkg.sv(414): 'super.new()' call must be the first executable statement in the class constructor.
+# ** Error (suppressible): tb_mtx_pkg.sv(415): (vlog-2745) Expected #() syntax as parameterized class prefix to '::' near "type_id".
+# ** Error: tb_mtx_pkg.sv(434): (vlog-2163) Macro `uvm_info is undefined.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(434): near "(": syntax error, unexpected '('.
+# ** Error: tb_mtx_pkg.sv(442): (vlog-2730) Undefined variable: 'mtx_agent'.
+# ** Warning: tb_mtx_pkg.sv(443): (vlog-2953) Incorrect usage of keyword 'static'.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(444): near "function": syntax error, unexpected function, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: tb_mtx_pkg.sv(445): 'create_component' already exists; must not be redefined as a function.
+# ** Error: (vlog-13069) tb_mtx_pkg.sv(446): near "new": syntax error, unexpected "SystemVerilog keyword 'new'".
+# ** Error: tb_mtx_pkg.sv(448): 'get_type_name' already exists; must not be redefined as a function.
+# ** Error: tb_mtx_pkg.sv(451): Invalid type 'mtx_monitor'. Please check the type of the variable 'mon'.
+# ** Error (suppressible): tb_mtx_pkg.sv(454): (vlog-2388) 'ap' already declared in this scope (mtx_driver) at tb_mtx_pkg.sv(235).
+# ** Error: tb_mtx_pkg.sv(454): (vlog-13311) 'ap' already declared in this scope ('mtx_driver') with a type.
+# ** Error: tb_mtx_pkg.sv(456): Multiple constructors declared for class mtx_driver - only one allowed.
+# ** Error (suppressible): tb_mtx_pkg.sv(456): (vlog-2388) 'name' already declared in this scope (new) at tb_mtx_pkg.sv(175).
+# ** Error (suppressible): tb_mtx_pkg.sv(456): (vlog-2388) 'parent' already declared in this scope (new) at tb_mtx_pkg.sv(175).
+# ** Error: tb_mtx_pkg.sv(457): 'super.new()' call must be the first executable statement in the class constructor.
+# tb_mtx_pkg.sv(458): Verilog Compiler exiting
+# End time: 22:19:45 on Mar 04,2026, Elapsed time: 0:00:01
+# Errors: 99, Warnings: 6
 # ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
-# Error in macro ./run.do line 17
+# Error in macro ./run.do line 34
 # /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
 #     while executing
 # "vlog -cover sbcef +acc \
 #      -sv \
+#      +incdir+$uvm_src \
+#      uvm_macros_include.sv \
 #      mtx_interface.sv \
 #      mtx_mul_unit.sv \
-#      tb_mtx_pkg.sv \
-#      tb_mtx_mul_unit.sv"
+#      tb_mtx_pk..."
